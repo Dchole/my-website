@@ -10,7 +10,7 @@ const Header = () => {
           <SunIcon />
         </button>
         <nav>
-          <ul className="p-0 flex gap-8">
+          <ul className="flex gap-8">
             {links.map(({ label, path }) => (
               <li key={label}>
                 <Link href={path}>
