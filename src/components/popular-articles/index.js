@@ -14,7 +14,7 @@ const PopularArticles = ({ articles }) => {
           <a className="article-link focus:outline-none">
             <article
               id={article.slug}
-              className="flex justify-between gap-6 mb-5 p-3 bg-opacity-0 bg-purple-100 hover:bg-purple-50 active:bg-purple-200"
+              className="flex justify-between gap-6 mb-5 p-3 bg-opacity-0 bg-purple-100 hover:bg-purple-50 active:bg-purple-200 transition"
             >
               <div className="max-w-prose">
                 <h3 className="text-2xl text-gray-800 font-headline">

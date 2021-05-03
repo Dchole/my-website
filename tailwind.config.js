@@ -23,7 +23,8 @@ module.exports = {
     extend: {
       backgroundColor: ["active"],
       boxShadow: ["active"],
-      borderWidth: ["active"]
+      borderWidth: ["active"],
+      translate: ["active"]
     }
   },
   plugins: []

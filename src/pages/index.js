@@ -3,6 +3,7 @@ import base64 from "base-64";
 import PopularArticles from "@/components/popular-articles";
 import Snippets from "@/components/code-snippets";
 import addTitle from "@/components/code-snippets/gists";
+import Footer from "@/components/footer";
 
 export default function Home({ popularArticles, gists }) {
   return (

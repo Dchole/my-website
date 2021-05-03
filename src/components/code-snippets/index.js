@@ -4,7 +4,7 @@ const Snippets = ({ snippets }) => {
   return (
     <section
       id="snippets"
-      className="container max-w-screen-lg mt-2 mb-10 m-auto"
+      className="container max-w-screen-lg mt-8 mb-10 m-auto"
     >
       <h3 className="text-center text-4xl text-gray-900 font-headline font-semibold mb-5">
         Code Snippets
@@ -12,7 +12,7 @@ const Snippets = ({ snippets }) => {
       <div className="flex gap-5">
         {snippets.map(snippet => (
           <Link href={`/${snippet.id}`} key={snippet.id}>
-            <a className="p-3 border border-gray-200 border-solid rounded-lg hover:bg-purple-100 hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:bg-purple-100 focus:shadow-lg focus:-translate-y-1 transform transition">
+            <a className="p-3 border border-gray-200 border-solid rounded-lg hover:bg-purple-50 hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:bg-purple-50 focus:shadow-lg focus:-translate-y-1 active:bg-purple-100 active:translate-y-0 active:shadow-none transform transition">
               <h4 className="text-lg text-gray-800 font-headline mb-1">
                 {snippet.title}
               </h4>
