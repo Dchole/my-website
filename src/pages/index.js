@@ -10,7 +10,7 @@ export default function Home() {
 
       <div
         id="hero"
-        className="h-screen w-full bg-waves-light bg-cover bg-no-repeat"
+        className="h-screen w-full bg-waves-light bg-cover bg-center bg-no-repeat"
       >
         <section
           id="intro"
@@ -31,7 +31,7 @@ export default function Home() {
               distinctio quisquam.
             </p>
           </div>
-          <button className="py-2 px-4 text-white font-body font-bold bg-purple-600 hover:bg-purple-500 transition-colors">
+          <button className="py-2 px-4 text-sm leading-relaxed tracking-wide uppercase text-white font-body font-medium bg-purple-600 hover:bg-purple-500 shadow-md hover:shadow-lg active:shadow-none transition-colors transition-shadow">
             Contact Me
           </button>
         </section>

@@ -5,8 +5,11 @@ import links from "./links";
 const Header = () => {
   return (
     <header className="absolute w-full">
-      <div className="toolbar p-4 flex justify-between">
-        <button aria-label="light theme">
+      <div className="toolbar px-4 py-6 m-auto flex justify-between container max-w-screen-lg">
+        <button
+          aria-label="light theme"
+          className="p-3 rounded-full bg-transparent hover:bg-gray-500 hover:bg-opacity-10 transition-colors"
+        >
           <SunIcon />
         </button>
         <nav>
@@ -14,7 +17,7 @@ const Header = () => {
             {links.map(({ label, path }) => (
               <li key={label}>
                 <Link href={path}>
-                  <a className="hover:text-purple-600 transition-colors">
+                  <a className="text-lg font-display hover:text-purple-600 transition-colors">
                     {label}
                   </a>
                 </Link>
