@@ -11,10 +11,10 @@ const PopularArticles = ({ articles }) => {
       </h2>
       {articles.map(article => (
         <Link href={`/${article.slug}`} key={article.id}>
-          <a>
+          <a className="article-link focus:outline-none">
             <article
               id={article.slug}
-              className="flex justify-between gap-6 mb-5"
+              className="flex justify-between gap-6 mb-5 p-3 bg-opacity-0 bg-purple-100 hover:bg-purple-50 active:bg-purple-200"
             >
               <div className="max-w-prose">
                 <h3 className="text-2xl text-gray-800 font-headline">
@@ -41,6 +41,11 @@ const PopularArticles = ({ articles }) => {
           </Link>
         </div>
       )}
+      <style jsx>{`
+        .article-link:focus article {
+          --tw-bg-opacity: 1;
+        }
+      `}</style>
     </section>
   );
 };

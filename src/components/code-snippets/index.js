@@ -12,7 +12,7 @@ const Snippets = ({ snippets }) => {
       <div className="flex gap-5">
         {snippets.map(snippet => (
           <Link href={`/${snippet.id}`} key={snippet.id}>
-            <a className="p-3 border border-gray-200 border-solid rounded-lg hover:bg-purple-100 hover:shadow-xl hover:-translate-y-1 focus:outline-none focus:bg-purple-100 focus:shadow-xl focus:-translate-y-1 transform transition">
+            <a className="p-3 border border-gray-200 border-solid rounded-lg hover:bg-purple-100 hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:bg-purple-100 focus:shadow-lg focus:-translate-y-1 transform transition">
               <h4 className="text-lg text-gray-800 font-headline mb-1">
                 {snippet.title}
               </h4>

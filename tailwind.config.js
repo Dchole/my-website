@@ -22,7 +22,8 @@ module.exports = {
   variants: {
     extend: {
       backgroundColor: ["active"],
-      boxShadow: ["active"]
+      boxShadow: ["active"],
+      borderWidth: ["active"]
     }
   },
   plugins: []
