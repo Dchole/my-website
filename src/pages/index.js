@@ -73,7 +73,7 @@ export const getStaticProps = async () => {
     headers: {
       Accept: "application/vnd.github.v3+json",
       Authorization: `Basic ${base64.encode(
-        `dchole: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`
+        `dchole:${process.env.GITHUB_TOKEN}`
       )}`
     }
   }).then(res => res.json());
