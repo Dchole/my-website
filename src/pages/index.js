@@ -1,7 +1,10 @@
 import Head from "next/head";
-import Link from "next/link";
+import base64 from "base-64";
+import PopularArticles from "@/components/popular-articles";
+import Snippets from "@/components/code-snippets";
+import addTitle from "@/components/code-snippets/gists";
 
-export default function Home({ popularArticles }) {
+export default function Home({ popularArticles, gists }) {
   return (
     <>
       <Head>
@@ -39,41 +42,8 @@ export default function Home({ popularArticles }) {
           </div>
         </section>
       </div>
-      <section id="sample-articles" className="container max-w-3xl m-auto mb-7">
-        <h2 className="text-5xl text-gray-800 font-headline font-bold leading-loose">
-          Most Popular Articles
-        </h2>
-        {popularArticles.map(article => (
-          <Link href={`/${article.slug}`} key={article.id}>
-            <a>
-              <article
-                id={article.slug}
-                className="flex justify-between gap-6 mb-5"
-              >
-                <div className="max-w-prose">
-                  <h3 className="text-2xl text-gray-800 font-headline">
-                    {article.title}
-                  </h3>
-                  <p className="mt-2 mb-3 text-gray-600 tracking-body font-body">
-                    {article.description}
-                  </p>
-                </div>
-                <div className="w-auto text-gray-700 font-body tracking-body">
-                  {article.page_views_count}{" "}
-                  <span className="text-gray-500">views</span>
-                </div>
-              </article>
-            </a>
-          </Link>
-        ))}
-        <div className="my-4">
-          <Link href="/blog">
-            <a className="text-lg text-purple-700 font-headline">
-              View All &rarr;
-            </a>
-          </Link>
-        </div>
-      </section>
+      <PopularArticles articles={popularArticles} />
+      <Snippets snippets={gists} />
       <style jsx>{`
         #call-to-action {
           width: fit-content;
@@ -99,11 +69,20 @@ export const getStaticProps = async () => {
     }
   }).then(res => res.json());
 
+  const gists = await fetch("https://api.github.com/gists", {
+    headers: {
+      Accept: "application/vnd.github.v3+json",
+      Authorization: `Basic ${base64.encode(
+        `dchole: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`
+      )}`
+    }
+  }).then(res => res.json());
+
   const popularArticles = articles
     .sort((a, b) => b.page_views_count - a.page_views_count) // Sort articles by page view count
     .slice(0, 3);
 
   return {
-    props: { popularArticles }
+    props: { popularArticles, gists: addTitle(gists) }
   };
 };

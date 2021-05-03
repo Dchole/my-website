@@ -11,6 +11,7 @@
     "@fontsource/nunito-sans": "^4.2.2",
     "@fontsource/roboto": "^4.2.3",
     "autoprefixer": "^10.2.5",
+    "base-64": "^1.0.0",
     "next": "10.x",
     "postcss": "^8.2.13",
     "react": "17.x",
