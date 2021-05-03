@@ -55,7 +55,9 @@ export default function Home({ popularArticles }) {
           </Link>
         ))}
         <Link href="/blog">
-          <a className="text-purple-700 font-headline mt-4">View All &rarr;</a>
+          <a className="text-lg text-purple-700 font-headline mt-4">
+            View All &rarr;
+          </a>
         </Link>
       </section>
       <style jsx>{`

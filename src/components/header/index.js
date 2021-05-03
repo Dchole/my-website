@@ -23,7 +23,7 @@ const Header = () => {
                 className={
                   pathname === path
                     ? "active-link text-purple-700 relative overflow-hidden"
-                    : "relative overflow-hidden"
+                    : "relative overflow-hidden text-gray-700 "
                 }
               >
                 <Link href={path}>
