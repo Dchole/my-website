@@ -25,7 +25,7 @@ export default function Home({ popularArticles }) {
             <h2 className="text-4xl text-gray-800 font-headline font-semibold leading-relaxed">
               Full-Stack Web Developer
             </h2>
-            <p className="text-lg text-gray-600 font-body italic">
+            <p className="text-lg text-gray-600 tracking-body font-body italic">
               I’m a full-stack web developer with love and enthusiasm for
               creating and experimenting with modern web technologies. I
               specialize mostly on frontend technologies specifically in the
@@ -39,26 +39,40 @@ export default function Home({ popularArticles }) {
           </div>
         </section>
       </div>
-      <section id="sample-articles" className="container max-w-3xl m-auto">
-        <h2>Most Popular Articles</h2>
+      <section id="sample-articles" className="container max-w-3xl m-auto mb-7">
+        <h2 className="text-5xl text-gray-800 font-headline font-bold leading-loose">
+          Most Popular Articles
+        </h2>
         {popularArticles.map(article => (
           <Link href={`/${article.slug}`} key={article.id}>
             <a>
-              <article id={article.slug}>
-                <h3>{article.title}</h3>
-                <p>{article.description}</p>
-                <div>
-                  <span>{article.page_views_count} views</span>
+              <article
+                id={article.slug}
+                className="flex justify-between gap-6 mb-5"
+              >
+                <div className="max-w-prose">
+                  <h3 className="text-2xl text-gray-800 font-headline">
+                    {article.title}
+                  </h3>
+                  <p className="mt-2 mb-3 text-gray-600 tracking-body font-body">
+                    {article.description}
+                  </p>
+                </div>
+                <div className="w-auto text-gray-700 font-body tracking-body">
+                  {article.page_views_count}{" "}
+                  <span className="text-gray-500">views</span>
                 </div>
               </article>
             </a>
           </Link>
         ))}
-        <Link href="/blog">
-          <a className="text-lg text-purple-700 font-headline mt-4">
-            View All &rarr;
-          </a>
-        </Link>
+        <div className="my-4">
+          <Link href="/blog">
+            <a className="text-lg text-purple-700 font-headline">
+              View All &rarr;
+            </a>
+          </Link>
+        </div>
       </section>
       <style jsx>{`
         #call-to-action {

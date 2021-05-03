@@ -11,9 +11,12 @@ module.exports = {
         body: "Roboto, sans-serif"
       },
       backgroundImage: _theme => ({
-        "waves-light": "url('/waves-bg-light.png')",
+        "waves-light": "url('/waves-bg-light.svg')",
         "waves-dark": "url('/waves-bg-dark.png')"
-      })
+      }),
+      letterSpacing: {
+        body: "0.01071em"
+      }
     }
   },
   variants: {
