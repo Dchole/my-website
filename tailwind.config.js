@@ -7,8 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['"Nunito Sans"', "sans-serif"],
-        body: ["Roboto", "sans-serif"]
+        headline: '"Nunito Sans", sans-serif',
+        body: "Roboto, sans-serif"
       },
       backgroundImage: _theme => ({
         "waves-light": "url('/waves-bg-light.png')",
@@ -17,7 +17,10 @@ module.exports = {
     }
   },
   variants: {
-    extend: {}
+    extend: {
+      backgroundColor: ["active"],
+      boxShadow: ["active"]
+    }
   },
   plugins: []
 };

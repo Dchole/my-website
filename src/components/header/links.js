@@ -12,8 +12,8 @@ const links = [
     path: "/blog"
   },
   {
-    label: "Portfolio",
-    path: "/portfolio"
+    label: "Projects",
+    path: "/projects"
   }
 ];
 

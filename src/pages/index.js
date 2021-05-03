@@ -18,24 +18,50 @@ export default function Home() {
         >
           <div className="mb-4">
             <p className="text-2xl text-right italic font-body">Hey 👋, I'm</p>
-            <h1 className="text-8xl text-black text-center font-display font-bold">
+            <h1 className="text-8xl text-gray-900 text-center font-headline font-bold">
               Derek Oware
             </h1>
-            <h2 className="text-4xl leading-relaxed">
+            <h2 className="text-4xl text-gray-800 font-headline font-semibold leading-relaxed">
               Full-Stack Web Developer
             </h2>
-            <p className="text-lg text-gray-700 font-body italic">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-              a magni, deleniti porro sed aliquam repellendus impedit itaque est
-              quibusdam aspernatur fugit provident. Dolorum iusto natus ad minus
-              distinctio quisquam.
+            <p className="text-lg text-gray-600 font-body italic">
+              I’m a full-stack web developer with love and enthusiasm for
+              creating and experimenting with modern web technologies. I
+              specialize mostly on frontend technologies specifically in the
+              React ecosystem
             </p>
           </div>
-          <button className="py-2 px-4 text-sm leading-relaxed tracking-wide uppercase text-white font-body font-medium bg-purple-600 hover:bg-purple-500 shadow-md hover:shadow-lg active:shadow-none transition-colors transition-shadow">
-            Contact Me
-          </button>
+          <div id="call-to-action">
+            <button className="py-2 px-4 text-sm leading-relaxed tracking-wider uppercase text-white font-body font-medium bg-purple-600 hover:bg-purple-500 shadow-md hover:shadow-lg active:bg-purple-700 active:shadow-none transform transition">
+              Contact Me
+            </button>
+          </div>
         </section>
       </div>
+      <section id="sample-articles">
+        <h2>Most Popular Articles</h2>
+        <article>
+          <h3></h3>
+          <p></p>
+          <div>
+            <span></span>
+          </div>
+        </article>
+      </section>
+      <style jsx>{`
+        #call-to-action {
+          width: fit-content;
+        }
+
+        #call-to-action:hover button,
+        #call-to-action:focus-within button {
+          --tw-translate-y: -0.5rem;
+        }
+
+        #call-to-action button:active {
+          --tw-translate-y: 0;
+        }
+      `}</style>
     </>
   );
 }
