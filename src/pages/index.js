@@ -3,7 +3,6 @@ import base64 from "base-64";
 import PopularArticles from "@/components/popular-articles";
 import Snippets from "@/components/code-snippets";
 import addTitle from "@/components/code-snippets/gists";
-import Footer from "@/components/footer";
 
 export default function Home({ popularArticles, gists }) {
   return (
@@ -19,7 +18,7 @@ export default function Home({ popularArticles, gists }) {
       >
         <section
           id="intro"
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          className="absolute container max-w-screen-md w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
         >
           <div className="mb-4">
             <p className="text-2xl text-right italic font-body">Hey 👋, I'm</p>
@@ -29,7 +28,7 @@ export default function Home({ popularArticles, gists }) {
             <h2 className="text-4xl text-gray-800 font-headline font-semibold leading-relaxed">
               Full-Stack Web Developer
             </h2>
-            <p className="text-lg text-gray-600 tracking-body font-body italic">
+            <p className="text-lg text-gray-600 tracking-body font-body italic max-w-prose">
               I’m a full-stack web developer with love and enthusiasm for
               creating and experimenting with modern web technologies. I
               specialize mostly on frontend technologies specifically in the
