@@ -26,7 +26,6 @@ const Header = () => {
                     : "relative overflow-hidden"
                 }
               >
-                {console.log({ path, pathname }, path === pathname)}
                 <Link href={path}>
                   <a className="text-lg font-semibold font-headline hover:text-purple-700 focus:outline-none focus:text-purple-700 transition-colors">
                     {label}

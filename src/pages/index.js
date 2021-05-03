@@ -1,6 +1,7 @@
 import Head from "next/head";
+import Link from "next/link";
 
-export default function Home() {
+export default function Home({ popularArticles }) {
   return (
     <>
       <Head>
@@ -38,15 +39,24 @@ export default function Home() {
           </div>
         </section>
       </div>
-      <section id="sample-articles">
+      <section id="sample-articles" className="container max-w-3xl m-auto">
         <h2>Most Popular Articles</h2>
-        <article>
-          <h3></h3>
-          <p></p>
-          <div>
-            <span></span>
-          </div>
-        </article>
+        {popularArticles.map(article => (
+          <Link href={`/${article.slug}`} key={article.id}>
+            <a>
+              <article id={article.slug}>
+                <h3>{article.title}</h3>
+                <p>{article.description}</p>
+                <div>
+                  <span>{article.page_views_count} views</span>
+                </div>
+              </article>
+            </a>
+          </Link>
+        ))}
+        <Link href="/blog">
+          <a className="text-purple-700 font-headline mt-4">View All &rarr;</a>
+        </Link>
       </section>
       <style jsx>{`
         #call-to-action {
@@ -65,3 +75,19 @@ export default function Home() {
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const articles = await fetch("https://dev.to/api/articles/me", {
+    headers: {
+      "api-key": process.env.DEV_API_KEY
+    }
+  }).then(res => res.json());
+
+  const popularArticles = articles
+    .sort((a, b) => b.page_views_count - a.page_views_count) // Sort articles by page view count
+    .slice(0, 3);
+
+  return {
+    props: { popularArticles }
+  };
+};
