@@ -10,7 +10,7 @@ const Links = () => {
           </h3>
           <ul className="space-y-2">
             {group.map(({ url, name }) => (
-              <li className={`${align}`} key={name}>
+              <li className={align} key={name}>
                 <a
                   href={`https://${url}`}
                   target="_blank"
@@ -22,6 +22,7 @@ const Links = () => {
               </li>
             ))}
           </ul>
+          {align === "center" && <h4 className={`text-xl ${align}`}></h4>}
         </div>
       ))}
     </div>
