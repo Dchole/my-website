@@ -8,7 +8,6 @@ import getGists from "@/data/recent-gists";
 import { popularArticles, recentArticles } from "@/data/articles";
 
 const Blog = ({ popularArticles, recentArticles, gists }) => {
-  console.log(recentArticles);
   return (
     <>
       <Head>
