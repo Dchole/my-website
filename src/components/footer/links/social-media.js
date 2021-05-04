@@ -9,4 +9,15 @@ const socialMedia = [
   }
 ];
 
+export const github = [
+  {
+    url: "github.com/Dchole",
+    name: "Repos"
+  },
+  {
+    url: "gist.github.com/Dchole",
+    name: "Gists"
+  }
+];
+
 export default socialMedia;
