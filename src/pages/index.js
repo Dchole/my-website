@@ -78,11 +78,13 @@ export const getStaticProps = async () => {
     }
   }).then(res => res.json());
 
+  const recentGists = addTitle(gists.slice(0, 4));
+
   const popularArticles = articles
     .sort((a, b) => b.page_views_count - a.page_views_count) // Sort articles by page view count
     .slice(0, 3);
 
   return {
-    props: { popularArticles, gists: addTitle(gists) }
+    props: { popularArticles, gists: recentGists }
   };
 };

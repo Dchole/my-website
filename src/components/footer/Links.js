@@ -4,13 +4,13 @@ const Links = () => {
   return (
     <div className="container max-w-screen-md m-auto grid grid-cols-3 mb-12">
       {groups.map(({ title, group, align }) => (
-        <div>
+        <div key={align}>
           <h3 className={`text-2xl ${align} font-headline font-semibold mb-3`}>
             {title}
           </h3>
           <ul className="space-y-2">
             {group.map(({ url, name }) => (
-              <li className={`${align}`}>
+              <li className={`${align}`} key={name}>
                 <a
                   href={`https://${url}`}
                   target="_blank"
