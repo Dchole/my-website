@@ -23,47 +23,52 @@ const Blog = ({ popularArticles, recentArticles, gists }) => {
         <PopularArticles articles={popularArticles} />
       </section>
 
-      <section id="all-articles" className="container max-w-screen-md m-auto">
-        <h2 className="text-5xl text-gray-800 font-headline font-bold leading-loose">
-          All Posts
-        </h2>
+      <section id="all-articles" className="container max-w-screen-xl m-auto">
+        <div className="container max-w-screen-md m-auto mb-12">
+          <h2 className="text-5xl text-gray-800 font-headline font-bold leading-loose">
+            All Posts
+          </h2>
 
-        <input
-          type="search"
-          name="search"
-          id="search"
-          placeholder="Search articles"
-          aria-label="search articles"
-          className="rounded-md border-2 border-gray-400 focus:outline-none focus:border-gray-900 px-3 py-1 text-lg text-gray-700 font-body tracking-body w-full"
-        />
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Search articles"
+            aria-label="search articles"
+            className="rounded-md border-2 border-gray-400 focus:outline-none focus:border-gray-900 px-3 py-1 text-lg text-gray-700 font-body tracking-body w-full"
+          />
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-12 mb-8">
+          {recentArticles.map(article => (
+            <Link href={`/blog/${article.slug}`} key={article.id}>
+              <a className="article-link p-6 focus:outline-none rounded-lg focus:bg-gray-200 hover:bg-gray-100 focus:shadow-md focus:-translate-y-1 hover:-translate-y-1 hover:shadow-md active:bg-gray-300 active:shadow-none active:translate-y-0 transform transition">
+                <article id={article.slug} className="relative h-full w-full">
+                  <div className="relative h-52">
+                    <Image
+                      src={`${article.cover_image}`}
+                      alt={article.title}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </div>
+                  <div className="mb-8">
+                    <h3 className="text-2xl text-gray-800 font-headline font-semibold my-4">
+                      {article.title}
+                    </h3>
+                    <p className="text-gray-600 tracking-body font-body">
+                      {article.description}
+                    </p>
+                  </div>
+                  <div className="absolute bottom-1 right-1">
+                    {formatDate(article.published_at)}
+                  </div>
+                </article>
+              </a>
+            </Link>
+          ))}
+        </div>
       </section>
-
-      {recentArticles.map(article => (
-        <Link href={`/blog/${article.slug}`} key={article.id}>
-          <a className="article-link focus:outline-none">
-            <article id={article.slug}>
-              <Image
-                src={`${article.cover_image}`}
-                alt={article.title}
-                width={100}
-                height={100}
-              />
-              <div>
-                <h3 className="text-2xl text-gray-800 font-headline">
-                  {article.title}
-                </h3>
-                <p className="text-gray-600 tracking-body font-body">
-                  {article.description}
-                </p>
-              </div>
-              <div className="published_date">
-                {formatDate(article.published_at)}
-              </div>
-            </article>
-          </a>
-        </Link>
-      ))}
-
       <Snippets snippets={gists} />
     </>
   );
