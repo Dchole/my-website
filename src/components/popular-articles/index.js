@@ -10,7 +10,7 @@ const PopularArticles = ({ articles }) => {
         Most Popular Articles
       </h2>
       {articles.map(article => (
-        <Link href={`/${article.slug}`} key={article.id}>
+        <Link href={`/blog/${article.slug}`} key={article.id}>
           <a className="article-link focus:outline-none">
             <article
               id={article.slug}

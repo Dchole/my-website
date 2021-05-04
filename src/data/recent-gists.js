@@ -1,3 +1,5 @@
+import base64 from "base-64";
+
 const addTitle = gists => {
   const snippets = [...gists];
 
@@ -27,4 +29,17 @@ const addTitle = gists => {
   return snippets;
 };
 
-export default addTitle;
+const getGists = async () => {
+  const gists = await fetch("https://api.github.com/gists", {
+    headers: {
+      Accept: "application/vnd.github.v3+json",
+      Authorization: `Basic ${base64.encode(
+        `dchole:${process.env.GITHUB_TOKEN}`
+      )}`
+    }
+  }).then(res => res.json());
+
+  return addTitle(gists.slice(0, 4));
+};
+
+export default getGists;

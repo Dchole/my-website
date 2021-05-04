@@ -27,7 +27,7 @@ const Header = () => {
                 }
               >
                 <Link href={path}>
-                  <a className="text-lg font-semibold font-headline hover:text-purple-700 focus:outline-none focus:text-purple-700 transition-colors">
+                  <a className="text-lg font-semibold font-headline hover:text-purple-600 focus:outline-none focus:text-purple-600 transition-colors">
                     {label}
                   </a>
                 </Link>

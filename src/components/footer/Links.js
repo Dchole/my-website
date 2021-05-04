@@ -30,7 +30,7 @@ const Links = () => {
               </h4>
               <ul className="space-y-2">
                 {github.map(({ url, name }) => (
-                  <li className="text-center">
+                  <li className="text-center" key={name}>
                     <a
                       href={`http://${url}`}
                       target="_blank"
