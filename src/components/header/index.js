@@ -7,7 +7,7 @@ const Header = () => {
   const { pathname } = useRouter();
 
   return (
-    <header className="absolute w-full">
+    <header className="absolute w-full top-0 z-50">
       <div className="toolbar px-4 py-6 m-auto flex justify-between container max-w-screen-lg">
         <button
           aria-label="light theme"

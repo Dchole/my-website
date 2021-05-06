@@ -20,7 +20,8 @@ const Footer = () => {
               height={32}
               alt="spotify logo"
             />
-            Listen with me
+            <span className="text-gray-800 font-medium">Listen with me</span>{" "}
+            &mdash; Spotify
           </a>
         </Link>
       </div>
