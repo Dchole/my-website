@@ -1,10 +1,10 @@
 import Head from "next/head";
-import base64 from "base-64";
 import PopularArticles from "@/components/popular-articles";
 import Snippets from "@/components/code-snippets";
-import addTitle from "@/components/code-snippets/gists";
+import getGists from "data/recent-gists";
+import { popularArticles } from "@/data/articles";
 
-export default function Home({ popularArticles, gists }) {
+export default function Home({ articles, gists }) {
   return (
     <>
       <Head>
@@ -42,7 +42,7 @@ export default function Home({ popularArticles, gists }) {
           </div>
         </section>
       </div>
-      <PopularArticles articles={popularArticles} />
+      <PopularArticles articles={articles} />
       <Snippets snippets={gists} />
       <style jsx>{`
         #call-to-action {
@@ -63,26 +63,10 @@ export default function Home({ popularArticles, gists }) {
 }
 
 export const getStaticProps = async () => {
-  const articles = await fetch("https://dev.to/api/articles/me", {
-    headers: {
-      "api-key": process.env.DEV_API_KEY
-    }
-  }).then(res => res.json());
-
-  const gists = await fetch("https://api.github.com/gists", {
-    headers: {
-      Accept: "application/vnd.github.v3+json",
-      Authorization: `Basic ${base64.encode(
-        `dchole:${process.env.GITHUB_TOKEN}`
-      )}`
-    }
-  }).then(res => res.json());
-
-  const popularArticles = articles
-    .sort((a, b) => b.page_views_count - a.page_views_count) // Sort articles by page view count
-    .slice(0, 3);
+  const articles = await popularArticles();
+  const gists = await getGists();
 
   return {
-    props: { popularArticles, gists: addTitle(gists) }
+    props: { articles, gists }
   };
 };
