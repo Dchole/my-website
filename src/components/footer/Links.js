@@ -3,15 +3,17 @@ import { github } from "./links/social-media";
 
 const Links = () => {
   return (
-    <div className="container max-w-screen-md m-auto grid grid-cols-3 mb-12">
+    <div className="container max-w-screen-md m-auto grid grid-cols-1 md:grid-cols-3">
       {groups.map(({ title, group, align }) => (
-        <div key={align}>
-          <h3 className={`text-2xl ${align} font-headline font-semibold mb-3`}>
+        <div key={align} className="mb-12">
+          <h3
+            className={`text-2xl text-center ${align} font-headline font-semibold mb-3`}
+          >
             {title}
           </h3>
           <ul className="space-y-2">
             {group.map(({ url, name }) => (
-              <li className={align} key={name}>
+              <li className={`text-center ${align}`} key={name}>
                 <a
                   href={`https://${url}`}
                   target="_blank"
@@ -23,7 +25,7 @@ const Links = () => {
               </li>
             ))}
           </ul>
-          {align === "text-center" && (
+          {align === "sm:text-center" && (
             <div className="my-5">
               <h4 className="text-xl text-center font-headline font-semibold mb-2">
                 Github

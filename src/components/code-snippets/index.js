@@ -2,7 +2,7 @@ const Snippets = ({ snippets }) => {
   return (
     <section
       id="snippets"
-      className="container max-w-screen-lg mt-8 mb-10 mx-5 sm:mx-0 m-auto"
+      className="container max-w-screen-lg mt-8 mb-10 m-auto"
     >
       <h3 className="text-center text-4xl text-gray-900 font-headline font-semibold mb-5">
         Code Snippets

@@ -7,7 +7,7 @@ const PopularArticles = ({ articles }) => {
   return (
     <section
       id="sample-articles"
-      className="container max-w-3xl m-auto mx-5 sm:mx-0 mb-12"
+      className="container max-w-3xl m-auto sm:mx-0 mb-12"
     >
       <h2 className="text-5xl text-gray-800 font-headline font-bold sm:leading-loose">
         Most Popular Articles

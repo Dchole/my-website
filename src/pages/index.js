@@ -15,7 +15,7 @@ export default function Home({ articles, gists }) {
       <div id="hero" className="w-full mb-16">
         <section
           id="intro"
-          className="mx-5 sm:mx-0 container max-w-screen-md m-auto"
+          className="sm:mx-0 container max-w-screen-md m-auto"
         >
           <div className="pt-40 mb-4 space-y-5">
             <h1 className="text-4xl sm:text-5xl text-gray-900 font-headline font-bold">
