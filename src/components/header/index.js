@@ -15,7 +15,7 @@ const Header = () => {
         >
           <SunIcon />
         </button>
-        <nav>
+        <nav className="sm:block hidden">
           <ul className="flex gap-8">
             {links.map(({ label, path }) => (
               <li
