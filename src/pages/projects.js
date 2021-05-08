@@ -4,8 +4,6 @@ import Head from "next/head";
 import ProjectTile from "@/components/project-tile";
 
 const Projects = ({ projects }) => {
-  console.log(typeof projects);
-
   return (
     <>
       <Head>
