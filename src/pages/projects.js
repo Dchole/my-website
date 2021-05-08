@@ -16,7 +16,11 @@ const Projects = ({ projects }) => {
 
         <div className="mt-32">
           {projects.map((project, index) => (
-            <ProjectTile project={project} position={index === 1 && "right"} />
+            <ProjectTile
+              key={project.title}
+              project={project}
+              position={index === 1 && "right"}
+            />
           ))}
         </div>
       </div>
