@@ -6,28 +6,21 @@ import { popularArticles } from "@/data/articles";
 
 export default function Home({ articles, gists }) {
   return (
-    <>
+    <div className="bg-waves-light bg-cover bg-center bg-no-repeat">
       <Head>
         <title>Derek Oware</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div
-        id="hero"
-        className="h-screen w-full bg-waves-light bg-cover bg-center bg-no-repeat"
-      >
+      <div id="hero" className="w-full mb-16">
         <section
           id="intro"
-          className="absolute container max-w-screen-md w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          className="mx-5 sm:mx-0 container max-w-screen-md m-auto"
         >
-          <div className="mb-4">
-            <p className="text-2xl text-right italic font-body">Hey 👋, I'm</p>
-            <h1 className="text-8xl text-gray-900 text-center font-headline font-bold">
-              Derek Oware
+          <div className="pt-40 mb-4 space-y-5">
+            <h1 className="text-4xl sm:text-5xl text-gray-900 font-headline font-bold">
+              Hey 👋, I'm Derek Oware
             </h1>
-            <h2 className="text-4xl text-gray-800 font-headline font-semibold leading-relaxed">
-              Full-Stack Web Developer
-            </h2>
             <p className="text-lg text-gray-600 tracking-body font-body italic max-w-prose">
               I’m a full-stack web developer with love and enthusiasm for
               creating and experimenting with modern web technologies. I
@@ -58,7 +51,7 @@ export default function Home({ articles, gists }) {
           --tw-translate-y: 0;
         }
       `}</style>
-    </>
+    </div>
   );
 }
 

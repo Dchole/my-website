@@ -5,8 +5,11 @@ const PopularArticles = ({ articles }) => {
   const { pathname } = useRouter();
 
   return (
-    <section id="sample-articles" className="container max-w-3xl m-auto mb-12">
-      <h2 className="text-5xl text-gray-800 font-headline font-bold leading-loose">
+    <section
+      id="sample-articles"
+      className="container max-w-3xl m-auto mx-5 sm:mx-0 mb-12"
+    >
+      <h2 className="text-5xl text-gray-800 font-headline font-bold sm:leading-loose">
         Most Popular Articles
       </h2>
       {articles.map(article => (
@@ -34,7 +37,7 @@ const PopularArticles = ({ articles }) => {
       ))}
       {pathname === "/" && (
         <div className="my-4">
-          <Link href="/blog">
+          <Link href="/blog#all-articles">
             <a className="text-lg text-purple-700 font-headline">
               View All &rarr;
             </a>
