@@ -17,6 +17,9 @@ module.exports = {
       }),
       letterSpacing: {
         body: "0.01071em"
+      },
+      scale: {
+        60: ".6"
       }
     }
   },

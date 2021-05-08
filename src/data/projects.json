@@ -1,0 +1,26 @@
+[
+  {
+    "title": "CatWiki Challenge",
+    "cover": "/catwiki.png",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde atque necessitatibus ratione natus commodi adipisci aperiam soluta magni, autem nostrum laboriosam vero voluptatum corporis rerum pariatur hic nihil eveniet id.",
+    "source": "https://github.com/Dchole/cat-wiki-challenge",
+    "demo": "https://cat-wiki-challenge.vercel.app",
+    "stack": [
+      {
+        "name": "NextJS",
+        "url": "https://nextjs.org",
+        "icon": "/nextjs-black-logo.svg"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://material-ui.com",
+        "icon": "/material-ui.svg"
+      },
+      {
+        "name": "GraphQL",
+        "url": "https://graphql.com/",
+        "icon": "/graphql.svg"
+      }
+    ]
+  }
+]

@@ -16,7 +16,7 @@ const Links = () => {
                   href={`https://${url}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 font-body tracking-body"
+                  className="text-gray-600 hover:text-purple-700 font-body tracking-body"
                 >
                   {name}
                 </a>
@@ -35,7 +35,7 @@ const Links = () => {
                       href={`http://${url}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-600 font-body tracking-body"
+                      className="text-gray-600 hover:text-purple-700 font-body tracking-body"
                     >
                       {name}
                     </a>
