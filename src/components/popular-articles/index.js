@@ -5,10 +5,7 @@ const PopularArticles = ({ articles }) => {
   const { pathname } = useRouter();
 
   return (
-    <section
-      id="sample-articles"
-      className="container max-w-3xl m-auto sm:mx-0 mb-12"
-    >
+    <section id="sample-articles" className="container max-w-3xl m-auto mb-12">
       <h2 className="text-5xl text-gray-800 font-headline font-bold sm:leading-loose">
         Most Popular Articles
       </h2>

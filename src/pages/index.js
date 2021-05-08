@@ -18,17 +18,17 @@ export default function Home({ articles, gists }) {
           className="sm:mx-0 container max-w-screen-md m-auto"
         >
           <div className="pt-40 mb-4 space-y-5">
-            <h1 className="text-4xl sm:text-5xl text-gray-900 font-headline font-bold">
+            <h1 className="text-4xl sm:text-5xl sm:text-center text-gray-900 font-headline font-bold">
               Hey 👋, I'm Derek Oware
             </h1>
-            <p className="text-lg text-gray-600 tracking-body font-body italic max-w-prose">
+            <p className="text-lg sm:text-center sm:m-auto text-gray-600 tracking-body font-body italic max-w-prose">
               I’m a full-stack web developer with love and enthusiasm for
               creating and experimenting with modern web technologies. I
               specialize mostly on frontend technologies specifically in the
               React ecosystem
             </p>
           </div>
-          <div id="call-to-action">
+          <div id="call-to-action" className="w-[fit-content] sm:m-auto">
             <button className="py-2 px-4 text-sm leading-relaxed tracking-wider uppercase text-white font-body font-medium bg-purple-600 hover:bg-purple-500 shadow-md hover:shadow-lg active:bg-purple-700 active:shadow-none transform transition">
               Contact Me
             </button>
@@ -38,10 +38,6 @@ export default function Home({ articles, gists }) {
       <PopularArticles articles={articles} />
       <Snippets snippets={gists} />
       <style jsx>{`
-        #call-to-action {
-          width: fit-content;
-        }
-
         #call-to-action:hover button,
         #call-to-action:focus-within button {
           --tw-translate-y: -0.5rem;
