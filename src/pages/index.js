@@ -13,10 +13,7 @@ export default function Home({ articles, gists }) {
       </Head>
 
       <div id="hero" className="w-full mb-16">
-        <section
-          id="intro"
-          className="sm:mx-0 container max-w-screen-md m-auto"
-        >
+        <section id="intro" className="container max-w-screen-md m-auto">
           <div className="pt-40 mb-4 space-y-5">
             <h1 className="text-4xl sm:text-5xl sm:text-center text-gray-900 font-headline font-bold">
               Hey 👋, I'm Derek Oware
