@@ -25,7 +25,7 @@ const Blog = ({ popularArticles, recentArticles, gists }) => {
 
       <section id="all-articles" className="container max-w-screen-xl m-auto">
         <div className="container max-w-screen-md m-auto mb-12">
-          <h2 className="text-5xl text-gray-800 font-headline font-bold leading-loose">
+          <h2 className="text-3xl sm:text-4xl text-gray-800 font-headline font-bold leading-loose mb-5">
             All Posts
           </h2>
 
