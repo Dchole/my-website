@@ -1,20 +1,35 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import SunIcon from "../icons/sun";
 import links from "./links";
+import Menu from "../icons/menu";
+import IconButton from "../buttons/IconButton";
+import { useState } from "react";
+
+const Sidebar = dynamic(() => import("../side-bar"), { ssr: false });
 
 const Header = () => {
   const { pathname } = useRouter();
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <header className="absolute w-full top-0 z-50">
-      <div className="toolbar px-4 py-6 m-auto flex justify-between container max-w-screen-lg">
-        <button
-          aria-label="light theme"
-          className="p-3 rounded-full bg-transparent hover:bg-gray-500 hover:bg-opacity-10 focus:outline-none focus:bg-gray-500 focus:bg-opacity-10 focus:ring-2 focus:ring-gray-500 focus:ring-opacity-30 transition-colors"
+      <div className="toolbar px-4 py-4 sm:py-6 m-auto flex justify-between container max-w-screen-lg">
+        <IconButton
+          aria-label="side-nav"
+          className="sm:hidden"
+          onClick={handleOpen}
         >
+          <Menu />
+        </IconButton>
+        <IconButton aria-label="light theme">
           <SunIcon />
-        </button>
+        </IconButton>
+        <Sidebar handleClose={handleClose} open={open} />
         <nav className="sm:block hidden">
           <ul className="flex gap-8">
             {links.map(({ label, path }) => (

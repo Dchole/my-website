@@ -3,6 +3,7 @@ import PopularArticles from "@/components/popular-articles";
 import Snippets from "@/components/code-snippets";
 import getGists from "@/data/recent-gists";
 import { popularArticles } from "@/data/articles";
+import Button from "@/components/buttons/Button";
 
 export default function Home({ articles, gists }) {
   return (
@@ -26,9 +27,7 @@ export default function Home({ articles, gists }) {
             </p>
           </div>
           <div id="call-to-action" className="w-[fit-content] sm:m-auto">
-            <button className="py-2 px-4 text-sm leading-relaxed tracking-wider uppercase text-white font-body font-medium bg-purple-600 hover:bg-purple-500 shadow-md hover:shadow-lg active:bg-purple-700 active:shadow-none transform transition">
-              Contact Me
-            </button>
+            <Button>Contact Me</Button>
           </div>
         </section>
       </div>
