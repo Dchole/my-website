@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import SunIcon from "../icons/sun";
 import links from "./links";
 import Menu from "../icons/menu";
-import IconButton from "../buttons/IconButton";
+import IconButton from "../IconButton";
 import { useState } from "react";
 
 const Sidebar = dynamic(() => import("../side-bar"), { ssr: false });

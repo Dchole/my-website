@@ -25,7 +25,7 @@ const Links = () => {
               </li>
             ))}
           </ul>
-          {align === "sm:text-center" && (
+          {align === "md:text-center" && (
             <div className="my-5">
               <h4 className="text-xl text-center font-headline font-semibold mb-2">
                 Github

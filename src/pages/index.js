@@ -3,7 +3,6 @@ import PopularArticles from "@/components/popular-articles";
 import Snippets from "@/components/code-snippets";
 import getGists from "@/data/recent-gists";
 import { popularArticles } from "@/data/articles";
-import Button from "@/components/buttons/Button";
 
 export default function Home({ articles, gists }) {
   return (
@@ -27,20 +26,24 @@ export default function Home({ articles, gists }) {
             </p>
           </div>
           <div id="call-to-action" className="w-[fit-content] sm:m-auto">
-            <Button>Contact Me</Button>
+            <button className="py-2 px-4 text-sm leading-relaxed tracking-wider uppercase text-white font-body font-medium bg-purple-600 hover:bg-purple-500 shadow-md hover:shadow-lg active:bg-purple-700 active:shadow-none transform transition">
+              Contact Me
+            </button>
           </div>
         </section>
       </div>
       <PopularArticles articles={articles} />
       <Snippets snippets={gists} />
       <style jsx>{`
-        #call-to-action:hover button,
-        #call-to-action:focus-within button {
-          --tw-translate-y: -0.5rem;
-        }
+        @media (min-width: 640px) {
+          #call-to-action:hover button,
+          #call-to-action:focus-within button {
+            --tw-translate-y: -0.5rem;
+          }
 
-        #call-to-action button:active {
-          --tw-translate-y: 0;
+          #call-to-action button:active {
+            --tw-translate-y: 0;
+          }
         }
       `}</style>
     </div>

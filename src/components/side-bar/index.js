@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ReactDOM from "react-dom";
-import IconButton from "../buttons/IconButton";
+import IconButton from "../IconButton";
 import links from "../header/links";
 import Close from "../icons/close";
 import FocusTrap from "focus-trap-react";
@@ -21,7 +21,7 @@ const Sidebar = ({ handleClose, open }) => {
         }`}
       >
         <IconButton
-          aria-label="close"
+          aria-label="close side-nav"
           className="absolute right-4 top-3"
           onClick={handleClose}
         >

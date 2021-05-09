@@ -2,11 +2,15 @@ import Image from "next/image";
 import ExternalLink from "@/components/icons/external-link";
 import Github from "@/components/icons/github";
 
-const ProjectTile = ({ project, position = "left" }) => {
+const ProjectTile = ({ project, reversed = false }) => {
   const { title, description, cover, source, demo, stack } = project;
 
   return (
-    <section className="flex gap-12 items-center">
+    <section
+      className={`flex gap-12 items-center ${
+        reversed ? "flex-row-reverse" : ""
+      }`}
+    >
       <Image
         src={cover}
         alt={title}

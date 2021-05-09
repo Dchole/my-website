@@ -6,17 +6,17 @@ const groups = [
   {
     title: "Blog Platforms",
     group: blogPlatforms,
-    align: "sm:text-left"
+    align: "md:text-left"
   },
   {
     title: "Social Media",
     group: socialMedia,
-    align: "sm:text-center"
+    align: "md:text-center"
   },
   {
     title: "Designs",
     group: designs,
-    align: "sm:text-right"
+    align: "md:text-right"
   }
 ];
 

@@ -19,7 +19,7 @@ const Projects = ({ projects }) => {
             <ProjectTile
               key={project.title}
               project={project}
-              position={index === 1 && "right"}
+              reversed={index === 1}
             />
           ))}
         </div>
