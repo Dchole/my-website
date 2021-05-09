@@ -4,7 +4,7 @@ const Snippets = ({ snippets }) => {
       id="snippets"
       className="container max-w-screen-lg mt-8 mb-10 m-auto"
     >
-      <h3 className="text-center text-4xl text-gray-900 font-headline font-semibold mb-5">
+      <h3 className="text-center text-2xl sm:text-3xl text-gray-900 font-headline font-semibold mb-5">
         Code Snippets
       </h3>
       <div className="flex gap-5 flex-wrap lg:flex-nowrap">

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import PopularArticles from "@/components/popular-articles";
 import Snippets from "@/components/code-snippets";
-import getGists from "data/recent-gists";
+import getGists from "@/data/recent-gists";
 import { popularArticles } from "@/data/articles";
 
 export default function Home({ articles, gists }) {

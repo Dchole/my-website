@@ -6,7 +6,7 @@ const PopularArticles = ({ articles }) => {
 
   return (
     <section id="sample-articles" className="container max-w-3xl m-auto mb-12">
-      <h2 className="text-5xl text-gray-800 font-headline font-bold sm:leading-loose">
+      <h2 className="text-3xl sm:text-4xl text-gray-800 font-headline font-bold sm:leading-loose mb-5">
         Most Popular Articles
       </h2>
       {articles.map(article => (
