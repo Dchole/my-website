@@ -19,10 +19,12 @@ const ProjectTile = ({ project, reversed = false }) => {
         objectFit="contain"
       />
       <div className="space-y-6">
-        <h2 className="text-5xl text-gray-900 font-headline font-bold">
+        <h2 className="text-5xl text-gray-900 dark:text-gray-100 font-headline font-bold">
           {title}
         </h2>
-        <p className="text-gray-600 font-body tracking-body">{description}</p>
+        <p className="text-gray-600 dark:text-gray-400 font-body tracking-body">
+          {description}
+        </p>
         <ul className="flex items-center justify-center gap-12">
           {stack.map(({ name, url, icon }) => (
             <li key={name}>
@@ -42,7 +44,7 @@ const ProjectTile = ({ project, reversed = false }) => {
             href={source}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-purple-700 text-md font-body tracking-body flex justify-between items-center gap-1"
+            className="text-purple-700 dark:text-purple-300 text-md font-body tracking-body flex justify-between items-center gap-1"
           >
             View Source Code{" "}
             <span className="transform scale-60">
@@ -53,7 +55,7 @@ const ProjectTile = ({ project, reversed = false }) => {
             href={demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-purple-700 text-md font-body tracking-body flex justify-between items-center gap-1"
+            className="text-purple-700 dark:text-purple-300 text-md font-body tracking-body flex justify-between items-center gap-1"
           >
             Visit Site{" "}
             <span className="transform scale-60">
