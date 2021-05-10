@@ -25,15 +25,29 @@ const Header = () => {
       [
         // keyframes
         { transform: "rotateZ(0deg)" },
+        { transform: "rotateZ(360deg)" },
+        { transform: "rotateZ(420deg)" },
+        { transform: "rotateZ(360deg)" },
+        { transform: "rotateZ(400deg)" },
+        { transform: "rotateZ(360deg)" },
+        { transform: "rotateZ(380deg)" },
         { transform: "rotateZ(360deg)" }
       ],
       {
         // timing options
-        duration: 240,
+        duration: 1000,
         easing: "ease-out"
       }
     );
   };
+
+  useEffect(
+    () =>
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? setTheme("dark")
+        : setTheme("light"),
+    []
+  );
 
   useEffect(() => {
     theme === "dark"
