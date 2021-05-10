@@ -43,6 +43,12 @@ const Header = () => {
 
   return (
     <header className="absolute w-full top-0 z-50">
+      <a id="skip-to-nav" href="#nav" className="absolute -top-80 focus:top-0">
+        Skip to navigation
+      </a>
+      <a href="#main" className="absolute -top-80 focus:top-0">
+        Skip to content
+      </a>
       <div className="toolbar px-4 py-4 sm:py-6 m-auto flex justify-between container max-w-screen-lg">
         <IconButton
           aria-label="open side navbar"
@@ -56,16 +62,6 @@ const Header = () => {
         </IconButton>
         <Sidebar handleClose={handleClose} open={open} />
         <nav id="nav" className="sm:block hidden">
-          <a
-            id="skip-to-nav"
-            href="#nav"
-            className="absolute -top-80 focus:top-0"
-          >
-            Skip to navigation
-          </a>
-          <a href="#main" className="absolute -top-80 focus:top-0">
-            Skip to content
-          </a>
           <ul className="flex gap-8">
             {links.map(({ label, path }) => (
               <li
