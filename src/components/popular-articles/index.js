@@ -20,7 +20,7 @@ const PopularArticles = ({ articles }) => {
         <Link href={`/blog/${article.slug}`} key={article.id}>
           <a
             className="article-link focus:outline-none"
-            aria-labelledby={`${article.slug}-title`}
+            aria-labelledby={`popular-${article.slug}-title`}
           >
             <article
               id={article.slug}
@@ -28,7 +28,7 @@ const PopularArticles = ({ articles }) => {
             >
               <div className="max-w-prose">
                 <h3
-                  id={`${article.slug}-title`}
+                  id={`popular-${article.slug}-title`}
                   className="text-2xl text-gray-800 dark:text-gray-200 font-headline"
                 >
                   {article.title}
