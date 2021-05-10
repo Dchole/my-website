@@ -30,7 +30,7 @@ const Header = () => {
           <SunIcon />
         </IconButton>
         <Sidebar handleClose={handleClose} open={open} />
-        <nav className="sm:block hidden" aria-label="primary navigation">
+        <nav className="sm:block hidden">
           <ul className="flex gap-8">
             {links.map(({ label, path }) => (
               <li

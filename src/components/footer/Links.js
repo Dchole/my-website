@@ -6,7 +6,7 @@ const Links = () => {
   return (
     <div className="container max-w-screen-md m-auto grid grid-cols-1 md:grid-cols-3">
       {groups.map(({ title, group, align }) => (
-        <div key={align} className="mb-12">
+        <nav key={align} className="mb-12">
           <h3
             id={slugify(title)}
             className={`text-2xl text-center ${align} font-headline font-semibold mb-3`}
@@ -49,7 +49,7 @@ const Links = () => {
               </ul>
             </div>
           )}
-        </div>
+        </nav>
       ))}
     </div>
   );
