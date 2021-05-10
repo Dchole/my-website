@@ -11,13 +11,19 @@ const PopularArticles = ({ articles }) => {
       </h2>
       {articles.map(article => (
         <Link href={`/blog/${article.slug}`} key={article.id}>
-          <a className="article-link focus:outline-none">
+          <a
+            className="article-link focus:outline-none"
+            aria-labelledby={`${article.slug}-title`}
+          >
             <article
               id={article.slug}
               className="flex justify-between gap-6 mb-5 p-3 bg-opacity-0 bg-purple-100 hover:bg-purple-50 active:bg-purple-200 transition"
             >
               <div className="max-w-prose">
-                <h3 className="text-2xl text-gray-800 font-headline">
+                <h3
+                  id={`${article.slug}-title`}
+                  className="text-2xl text-gray-800 font-headline"
+                >
                   {article.title}
                 </h3>
                 <p className="mt-2 mb-3 text-gray-600 tracking-body font-body">
@@ -35,7 +41,10 @@ const PopularArticles = ({ articles }) => {
       {pathname === "/" && (
         <div className="my-4">
           <Link href="/blog#all-articles">
-            <a className="text-lg text-purple-700 font-headline">
+            <a
+              className="text-lg text-purple-700 font-headline"
+              aria-label="View all articles"
+            >
               View All &rarr;
             </a>
           </Link>

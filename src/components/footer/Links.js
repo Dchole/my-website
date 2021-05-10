@@ -12,12 +12,13 @@ const Links = () => {
             {title}
           </h3>
           <ul className="space-y-2">
-            {group.map(({ url, name }) => (
+            {group.map(({ url, name, ...rest }) => (
               <li className={`text-center ${align}`} key={name}>
                 <a
                   href={`https://${url}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={rest.aria}
                   className="text-gray-600 hover:text-purple-700 font-body tracking-body"
                 >
                   {name}

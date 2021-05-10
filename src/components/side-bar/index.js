@@ -1,9 +1,9 @@
 import Link from "next/link";
 import ReactDOM from "react-dom";
+import FocusTrap from "focus-trap-react";
 import IconButton from "../IconButton";
 import links from "../header/links";
 import Close from "../icons/close";
-import FocusTrap from "focus-trap-react";
 
 const Sidebar = ({ handleClose, open }) => {
   const hideSidebar = event => {
@@ -13,15 +13,15 @@ const Sidebar = ({ handleClose, open }) => {
   return ReactDOM.createPortal(
     <FocusTrap active={open}>
       <aside
-        id="sidebar"
+        id="sidenav"
         onTransitionEnd={hideSidebar}
-        aria-label="Navigation"
-        className={`fixed top-0 left-0 h-screen w-full bg-white z-50 flex justify-center items-center transform transition-transform shadow-xl ${
+        aria-label="Navigation Menu"
+        className={`fixed top-0 left-0 h-screen w-full bg-white z-50 flex justify-center items-center transform transition-transform shadow-2xl ${
           open ? "visible translate-x-0" : "-translate-x-full"
         }`}
       >
         <IconButton
-          aria-label="close side-nav"
+          aria-label="close side navbar"
           className="absolute right-4 top-3"
           onClick={handleClose}
         >

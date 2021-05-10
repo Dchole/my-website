@@ -1,7 +1,8 @@
 const blogPlatforms = [
   {
     url: "dev.to/bugs_bunny",
-    name: "Dev.to"
+    name: "Dev.to",
+    aria: "Dev"
   },
   {
     url: "hashnode.com/@hashbunny",

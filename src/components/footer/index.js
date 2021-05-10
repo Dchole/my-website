@@ -13,7 +13,10 @@ const Footer = () => {
       >
         <div className=""></div>
         <Link href="/about#spotify-playlist">
-          <a className="text-gray-600 font-body tracking-body flex items-center gap-2">
+          <a
+            className="text-gray-600 font-body tracking-body flex items-center gap-2"
+            aria-label="listen with me on spotify"
+          >
             <Image
               src="/spotify-logo.svg"
               width={32}

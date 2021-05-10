@@ -20,13 +20,13 @@ const Header = () => {
     <header className="absolute w-full top-0 z-50">
       <div className="toolbar px-4 py-4 sm:py-6 m-auto flex justify-between container max-w-screen-lg">
         <IconButton
-          aria-label="side-nav"
+          aria-label="open side navbar"
           className="sm:hidden"
           onClick={handleOpen}
         >
           <Menu />
         </IconButton>
-        <IconButton aria-label="light theme">
+        <IconButton aria-label="toggle light theme">
           <SunIcon />
         </IconButton>
         <Sidebar handleClose={handleClose} open={open} />
