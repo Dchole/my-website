@@ -4,7 +4,7 @@ import Links from "./Links";
 
 const Footer = () => {
   return (
-    <footer className="px-4 lg:px-0 mt-16 bg-gray-100 dark:bg-gray-800 pt-12 pb-8">
+    <footer className="px-4 lg:px-0 mt-16 bg-gray-100 dark:bg-gray-800 pt-12 pb-8 transition-colors">
       <h2 className="sr-only">Footer Navigation</h2>
       <Links />
       <div

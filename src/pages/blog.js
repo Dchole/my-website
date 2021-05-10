@@ -31,7 +31,7 @@ const Blog = ({ popularArticles, recentArticles, gists }) => {
         <div className="container max-w-screen-md m-auto mb-12">
           <h2
             id="all-articles-title"
-            className="text-3xl sm:text-4xl text-gray-800 font-headline font-bold leading-loose mb-5"
+            className="text-3xl sm:text-4xl text-gray-800 dark:text-gray-200 font-headline font-bold leading-loose mb-5"
           >
             All Posts
           </h2>
@@ -42,7 +42,7 @@ const Blog = ({ popularArticles, recentArticles, gists }) => {
             id="search"
             placeholder="Search articles"
             aria-label="search articles"
-            className="rounded-md border-2 border-gray-400 focus:outline-none focus:border-gray-900 px-3 py-1 text-lg text-gray-700 font-body tracking-body w-full"
+            className="rounded-md border-2 border-gray-400 focus:outline-none focus:border-gray-900 dark:focus:border-gray-100 px-3 py-1 text-lg text-gray-700 dark:text-gray-100 dark:bg-gray-800 font-body tracking-body w-full"
           />
         </div>
 
@@ -51,7 +51,7 @@ const Blog = ({ popularArticles, recentArticles, gists }) => {
             <Link href={`/blog/${article.slug}`} key={article.id}>
               <a
                 aria-labelledby={`${article.slug}-title`}
-                className="article-link p-6 focus:outline-none rounded-lg focus:bg-gray-200 hover:bg-gray-100 focus:shadow-md focus:-translate-y-1 hover:-translate-y-1 hover:shadow-md active:bg-gray-300 active:shadow-none active:translate-y-0 transform transition"
+                className="article-link p-6 focus:outline-none rounded-lg focus:bg-gray-200 dark:focus:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 focus:shadow-md focus:-translate-y-1 hover:-translate-y-1 hover:shadow-md active:bg-gray-300 dark:active:bg-gray-800 active:shadow-none active:translate-y-0 transform transition"
               >
                 <article id={article.slug} className="relative h-full w-full">
                   <div className="relative h-52">
@@ -65,15 +65,15 @@ const Blog = ({ popularArticles, recentArticles, gists }) => {
                   <div className="mb-8">
                     <h3
                       id={`${article.slug}-title`}
-                      className="text-2xl text-gray-800 font-headline font-semibold my-4"
+                      className="text-2xl text-gray-800 dark:text-gray-200 font-headline font-semibold my-4"
                     >
                       {article.title}
                     </h3>
-                    <p className="text-gray-600 tracking-body font-body">
+                    <p className="text-gray-600 dark:text-gray-400 tracking-body font-body">
                       {article.description}
                     </p>
                   </div>
-                  <div className="absolute bottom-1 right-1">
+                  <div className="text-gray-600 dark:text-gray-400 absolute bottom-1 right-1">
                     {formatDate(article.published_at)}
                   </div>
                 </article>
