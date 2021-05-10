@@ -16,7 +16,7 @@ export default function Home({ articles, gists }) {
         <section id="intro" className="container max-w-screen-md m-auto">
           <div className="pt-40 mb-4 space-y-5">
             <h1 className="text-4xl sm:text-5xl sm:text-center text-gray-900 font-headline font-bold">
-              Hey 👋, I'm Derek Oware
+              Hey <span aria-hidden>👋</span>, I'm Derek Oware
             </h1>
             <p className="text-lg sm:text-center sm:m-auto text-gray-600 tracking-body font-body italic max-w-prose">
               I’m a full-stack web developer with love and enthusiasm for

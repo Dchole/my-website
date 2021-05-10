@@ -19,13 +19,20 @@ const Blog = ({ popularArticles, recentArticles, gists }) => {
       </Head>
 
       <h1 className="sr-only">Articles</h1>
-      <section id="popular-articles" className="h-full pt-24">
+      <div className="h-full pt-24">
         <PopularArticles articles={popularArticles} />
-      </section>
+      </div>
 
-      <section id="all-articles" className="container max-w-screen-xl m-auto">
+      <section
+        id="all-articles"
+        aria-labelledby="all-articles-title"
+        className="container max-w-screen-xl m-auto"
+      >
         <div className="container max-w-screen-md m-auto mb-12">
-          <h2 className="text-3xl sm:text-4xl text-gray-800 font-headline font-bold leading-loose mb-5">
+          <h2
+            id="all-articles-title"
+            className="text-3xl sm:text-4xl text-gray-800 font-headline font-bold leading-loose mb-5"
+          >
             All Posts
           </h2>
 
@@ -42,7 +49,10 @@ const Blog = ({ popularArticles, recentArticles, gists }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-12 mb-8">
           {recentArticles.map(article => (
             <Link href={`/blog/${article.slug}`} key={article.id}>
-              <a className="article-link p-6 focus:outline-none rounded-lg focus:bg-gray-200 hover:bg-gray-100 focus:shadow-md focus:-translate-y-1 hover:-translate-y-1 hover:shadow-md active:bg-gray-300 active:shadow-none active:translate-y-0 transform transition">
+              <a
+                aria-labelledby={`${article.slug}-title`}
+                className="article-link p-6 focus:outline-none rounded-lg focus:bg-gray-200 hover:bg-gray-100 focus:shadow-md focus:-translate-y-1 hover:-translate-y-1 hover:shadow-md active:bg-gray-300 active:shadow-none active:translate-y-0 transform transition"
+              >
                 <article id={article.slug} className="relative h-full w-full">
                   <div className="relative h-52">
                     <Image
@@ -53,7 +63,10 @@ const Blog = ({ popularArticles, recentArticles, gists }) => {
                     />
                   </div>
                   <div className="mb-8">
-                    <h3 className="text-2xl text-gray-800 font-headline font-semibold my-4">
+                    <h3
+                      id={`${article.slug}-title`}
+                      className="text-2xl text-gray-800 font-headline font-semibold my-4"
+                    >
                       {article.title}
                     </h3>
                     <p className="text-gray-600 tracking-body font-body">

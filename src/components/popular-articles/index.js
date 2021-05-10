@@ -5,8 +5,15 @@ const PopularArticles = ({ articles }) => {
   const { pathname } = useRouter();
 
   return (
-    <section id="sample-articles" className="container max-w-3xl m-auto mb-12">
-      <h2 className="text-3xl sm:text-4xl text-gray-800 font-headline font-bold sm:leading-loose mb-5">
+    <section
+      id="popular-articles"
+      aria-labelledby="popular-articles-title"
+      className="container max-w-3xl m-auto mb-12"
+    >
+      <h2
+        id="popular-articles-title"
+        className="text-3xl sm:text-4xl text-gray-800 font-headline font-bold sm:leading-loose mb-5"
+      >
         Most Popular Articles
       </h2>
       {articles.map(article => (

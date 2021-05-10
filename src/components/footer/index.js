@@ -5,8 +5,12 @@ import Links from "./Links";
 const Footer = () => {
   return (
     <footer className="px-4 lg:px-0 mt-16 bg-gray-100 pt-12 pb-8">
-      <h2 className="sr-only">Other Links</h2>
-      <Links />
+      <nav aria-labelledby="footer-navigation">
+        <h2 id="footer-navigation" className="sr-only">
+          Footer Navigation
+        </h2>
+        <Links />
+      </nav>
       <div
         id="base-footer"
         className="container max-w-screen-lg m-auto flex justify-between items-center"

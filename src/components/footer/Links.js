@@ -1,3 +1,4 @@
+import slugify from "@/utils/slugify";
 import groups from "./links/groups";
 import { github } from "./links/social-media";
 
@@ -7,6 +8,7 @@ const Links = () => {
       {groups.map(({ title, group, align }) => (
         <div key={align} className="mb-12">
           <h3
+            id={slugify(title)}
             className={`text-2xl text-center ${align} font-headline font-semibold mb-3`}
           >
             {title}
