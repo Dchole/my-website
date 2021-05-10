@@ -30,7 +30,7 @@ const Header = () => {
           <SunIcon />
         </IconButton>
         <Sidebar handleClose={handleClose} open={open} />
-        <nav className="sm:block hidden">
+        <nav id="nav" className="sm:block hidden">
           <ul className="flex gap-8">
             {links.map(({ label, path }) => (
               <li
@@ -38,7 +38,7 @@ const Header = () => {
                 className={
                   pathname === path
                     ? "active-link text-purple-700 relative overflow-hidden"
-                    : "relative overflow-hidden text-gray-700 "
+                    : "relative overflow-hidden text-gray-700"
                 }
               >
                 <Link href={path}>
