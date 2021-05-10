@@ -9,7 +9,8 @@
       {
         "name": "NextJS",
         "url": "https://nextjs.org",
-        "icon": "/nextjs-black-logo.svg"
+        "icon": "/nextjs-black-logo.svg",
+        "dark-mode-icon": "/nextjs-white-logo.svg"
       },
       {
         "name": "Material UI",

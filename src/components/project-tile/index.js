@@ -1,9 +1,11 @@
 import Image from "next/image";
 import ExternalLink from "@/components/icons/external-link";
 import Github from "@/components/icons/github";
+import { useTheme } from "../theme/ThemeContext";
 
 const ProjectTile = ({ project, reversed = false }) => {
   const { title, description, cover, source, demo, stack } = project;
+  const { theme } = useTheme();
 
   return (
     <section
@@ -26,11 +28,18 @@ const ProjectTile = ({ project, reversed = false }) => {
           {description}
         </p>
         <ul className="flex items-center justify-center gap-12">
-          {stack.map(({ name, url, icon }) => (
+          {stack.map(({ name, url, icon, ...rest }) => (
             <li key={name}>
               <a href={url} target="_blank" rel="noopener noreferrer">
                 <Image
-                  src={icon}
+                  src={
+                    /*  Toggle between dark and light icons */
+                    !rest["dark-mode-icon"] // Check if stack object has "dark-mode-icon" property
+                      ? icon // If it doesn't, always use the "icon" property
+                      : theme === "dark" // Else check if we've toggled dark mode
+                      ? rest["dark-mode-icon"] // If we have, use the dark mode icon
+                      : icon // If not, use the default icon
+                  }
                   alt={name}
                   width={name === "NextJS" ? 50 : 40}
                   height={name === "NextJS" ? 50 : 40}

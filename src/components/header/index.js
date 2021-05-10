@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -7,19 +7,22 @@ import links from "./links";
 import Menu from "../icons/menu";
 import IconButton from "../IconButton";
 import Moon from "../icons/moon";
+import { useTheme } from "../theme/ThemeContext";
 
 const Sidebar = dynamic(() => import("../side-bar"), { ssr: false });
 
 const Header = () => {
   const { pathname } = useRouter();
   const [open, setOpen] = useState(false);
-  const [theme, setTheme] = useState("light");
+  const { theme, toggleTheme } = useTheme();
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   const handleToggleTheme = event => {
-    theme === "dark" ? setTheme("light") : setTheme("dark");
+    // theme === "dark" ? setTheme("light") : setTheme("dark");
+    toggleTheme();
+    console.log({ theme });
 
     event.currentTarget.animate(
       [
@@ -41,19 +44,19 @@ const Header = () => {
     );
   };
 
-  useEffect(
-    () =>
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? setTheme("dark")
-        : setTheme("light"),
-    []
-  );
+  // useEffect(
+  //   () =>
+  //     window.matchMedia("(prefers-color-scheme: dark)").matches
+  //       ? setTheme("dark")
+  //       : setTheme("light"),
+  //   []
+  // );
 
-  useEffect(() => {
-    theme === "dark"
-      ? document.documentElement.classList.add("dark")
-      : document.documentElement.classList.remove("dark");
-  }, [theme]);
+  // useEffect(() => {
+  //   theme === "dark"
+  //     ? document.documentElement.classList.add("dark")
+  //     : document.documentElement.classList.remove("dark");
+  // }, [theme]);
 
   return (
     <header className="absolute w-full top-0 z-50">
