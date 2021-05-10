@@ -6,7 +6,7 @@ import { popularArticles } from "@/data/articles";
 
 export default function Home({ articles, gists }) {
   return (
-    <div className="bg-waves-light dark:bg-waves-dark bg-cover bg-center bg-no-repeat">
+    <div className="lg:bg-waves-light lg:dark:bg-waves-dark bg-cover bg-center bg-no-repeat">
       <Head>
         <title>Derek Oware</title>
         <link rel="icon" href="/favicon.ico" />
