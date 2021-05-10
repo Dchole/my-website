@@ -16,7 +16,7 @@ const Sidebar = ({ handleClose, open }) => {
         id="sidenav"
         onTransitionEnd={hideSidebar}
         aria-label="Navigation Menu"
-        className={`fixed top-0 left-0 h-screen w-full bg-white z-50 flex justify-center items-center transform transition-transform shadow-2xl ${
+        className={`fixed top-0 left-0 h-screen w-full bg-white z-50 flex justify-center items-center transform transition-transform duration-300 shadow-2xl ${
           open ? "visible translate-x-0" : "-translate-x-full"
         }`}
       >
