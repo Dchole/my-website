@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -6,15 +6,40 @@ import SunIcon from "../icons/sun";
 import links from "./links";
 import Menu from "../icons/menu";
 import IconButton from "../IconButton";
+import Moon from "../icons/moon";
 
 const Sidebar = dynamic(() => import("../side-bar"), { ssr: false });
 
 const Header = () => {
   const { pathname } = useRouter();
   const [open, setOpen] = useState(false);
+  const [theme, setTheme] = useState("light");
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const handleToggleTheme = event => {
+    theme === "dark" ? setTheme("light") : setTheme("dark");
+
+    event.currentTarget.animate(
+      [
+        // keyframes
+        { transform: "rotateZ(0deg)" },
+        { transform: "rotateZ(360deg)" }
+      ],
+      {
+        // timing options
+        duration: 240,
+        easing: "ease-out"
+      }
+    );
+  };
+
+  useEffect(() => {
+    theme === "dark"
+      ? document.documentElement.classList.add("dark")
+      : document.documentElement.classList.remove("dark");
+  }, [theme]);
 
   return (
     <header className="absolute w-full top-0 z-50">
@@ -26,23 +51,33 @@ const Header = () => {
         >
           <Menu />
         </IconButton>
-        <IconButton aria-label="toggle light theme">
-          <SunIcon />
+        <IconButton aria-label="toggle light theme" onClick={handleToggleTheme}>
+          {theme === "dark" ? <SunIcon /> : <Moon />}
         </IconButton>
         <Sidebar handleClose={handleClose} open={open} />
         <nav id="nav" className="sm:block hidden">
+          <a
+            id="skip-to-nav"
+            href="#nav"
+            className="absolute -top-80 focus:top-0"
+          >
+            Skip to navigation
+          </a>
+          <a href="#main" className="absolute -top-80 focus:top-0">
+            Skip to content
+          </a>
           <ul className="flex gap-8">
             {links.map(({ label, path }) => (
               <li
                 key={label}
                 className={
                   pathname === path
-                    ? "active-link text-purple-700 relative overflow-hidden"
-                    : "relative overflow-hidden text-gray-700"
+                    ? "active-link text-purple-700 dark:text-purple-400 relative overflow-hidden"
+                    : "relative overflow-hidden text-gray-700 dark:text-gray-100"
                 }
               >
                 <Link href={path}>
-                  <a className="text-lg font-semibold font-headline hover:text-purple-600 focus:outline-none focus:text-purple-600 transition-colors">
+                  <a className="text-lg font-semibold font-headline hover:text-purple-600 dark:hover:text-purple-400 focus:outline-none focus:text-purple-600 dark:focus:text-purple-400 transition-colors">
                     {label}
                   </a>
                 </Link>

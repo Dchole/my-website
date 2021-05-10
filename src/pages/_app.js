@@ -7,8 +7,15 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/400-italic.css";
 import "tailwindcss/tailwind.css";
+import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? document.documentElement.classList.add("dark")
+      : document.documentElement.classList.remove("dark");
+  }, []);
+
   return (
     <Layout>
       <Head>

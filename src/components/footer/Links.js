@@ -9,7 +9,7 @@ const Links = () => {
         <nav key={align} className="mb-12">
           <h3
             id={slugify(title)}
-            className={`text-2xl text-center ${align} font-headline font-semibold mb-3`}
+            className={`text-gray-800 dark:text-gray-200 text-2xl text-center ${align} font-headline font-semibold mb-3`}
           >
             {title}
           </h3>
@@ -21,7 +21,7 @@ const Links = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={rest.aria}
-                  className="text-gray-600 hover:text-purple-700 font-body tracking-body"
+                  className="text-gray-600 dark:text-gray-400 hover:text-purple-700 font-body tracking-body"
                 >
                   {name}
                 </a>
@@ -30,7 +30,7 @@ const Links = () => {
           </ul>
           {align === "md:text-center" && (
             <div className="my-5">
-              <h4 className="text-xl text-center font-headline font-semibold mb-2">
+              <h4 className="text-gray-800 dark:text-gray-200 text-xl text-center font-headline font-semibold mb-2">
                 Github
               </h4>
               <ul className="space-y-2">
@@ -40,7 +40,7 @@ const Links = () => {
                       href={`http://${url}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-purple-700 font-body tracking-body"
+                      className="text-gray-600 dark:text-gray-400 hover:text-purple-700 dark:hover:text-purple-400 font-body tracking-body"
                     >
                       {name}
                     </a>

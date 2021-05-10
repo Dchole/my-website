@@ -12,7 +12,7 @@ const PopularArticles = ({ articles }) => {
     >
       <h2
         id="popular-articles-title"
-        className="text-3xl sm:text-4xl text-gray-800 font-headline font-bold sm:leading-loose mb-5"
+        className="text-3xl sm:text-4xl text-gray-800 dark:text-gray-200 font-headline font-bold sm:leading-loose mb-5"
       >
         Most Popular Articles
       </h2>
@@ -24,22 +24,22 @@ const PopularArticles = ({ articles }) => {
           >
             <article
               id={article.slug}
-              className="flex justify-between gap-6 mb-5 p-3 bg-opacity-0 bg-purple-100 hover:bg-purple-50 active:bg-purple-200 transition"
+              className="flex justify-between gap-6 mb-5 p-3 bg-opacity-0 bg-purple-100 dark:bg-opacity-0 dark:bg-gray-700 hover:bg-purple-50 dark:hover:bg-gray-700 active:bg-purple-200 dark:active:bg-gray-600 transition"
             >
               <div className="max-w-prose">
                 <h3
                   id={`${article.slug}-title`}
-                  className="text-2xl text-gray-800 font-headline"
+                  className="text-2xl text-gray-800 dark:text-gray-200 font-headline"
                 >
                   {article.title}
                 </h3>
-                <p className="mt-2 mb-3 text-gray-600 tracking-body font-body">
+                <p className="mt-2 mb-3 text-gray-600 dark:text-gray-400 tracking-body font-body">
                   {article.description}
                 </p>
               </div>
-              <div className="w-auto text-gray-700 font-body tracking-body">
+              <div className="w-auto text-gray-700 dark:text-gray-300 font-body tracking-body">
                 {article.page_views_count}{" "}
-                <span className="text-gray-500">views</span>
+                <span className="text-gray-500 dark:text-gray-400">views</span>
               </div>
             </article>
           </a>
@@ -49,7 +49,7 @@ const PopularArticles = ({ articles }) => {
         <div className="my-4">
           <Link href="/blog#all-articles">
             <a
-              className="text-lg text-purple-700 font-headline"
+              className="text-lg text-purple-700 dark:text-purple-400 font-headline"
               aria-label="View all articles"
             >
               View All &rarr;
