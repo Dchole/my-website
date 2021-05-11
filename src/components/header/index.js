@@ -20,14 +20,15 @@ const Header = () => {
   const handleClose = () => setOpen(false);
 
   const handleToggleTheme = event => {
-    // theme === "dark" ? setTheme("light") : setTheme("dark");
     toggleTheme();
-    console.log({ theme });
 
     event.currentTarget.animate(
       [
         // keyframes
         { transform: "rotateZ(0deg)" },
+        { transform: "rotateZ(90deg)" },
+        { transform: "rotateZ(180deg)" },
+        { transform: "rotateZ(270deg)" },
         { transform: "rotateZ(360deg)" },
         { transform: "rotateZ(420deg)" },
         { transform: "rotateZ(360deg)" },
@@ -38,25 +39,11 @@ const Header = () => {
       ],
       {
         // timing options
-        duration: 1000,
+        duration: 800,
         easing: "ease-out"
       }
     );
   };
-
-  // useEffect(
-  //   () =>
-  //     window.matchMedia("(prefers-color-scheme: dark)").matches
-  //       ? setTheme("dark")
-  //       : setTheme("light"),
-  //   []
-  // );
-
-  // useEffect(() => {
-  //   theme === "dark"
-  //     ? document.documentElement.classList.add("dark")
-  //     : document.documentElement.classList.remove("dark");
-  // }, [theme]);
 
   return (
     <header className="absolute w-full top-0 z-50">
