@@ -1,4 +1,4 @@
-const getArticles = async () =>
+export const getArticles = async () =>
   fetch("https://dev.to/api/articles/me", {
     headers: {
       "api-key": process.env.DEV_API_KEY

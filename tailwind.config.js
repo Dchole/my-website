@@ -9,7 +9,8 @@ module.exports = {
     extend: {
       fontFamily: {
         headline: '"Nunito Sans", sans-serif',
-        body: "Roboto, sans-serif"
+        body: "Roboto, sans-serif",
+        code: '"Fira Code", sans-serif'
       },
       backgroundImage: _theme => ({
         "waves-light": "url('/waves-bg-light.svg')",
