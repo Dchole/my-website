@@ -12,8 +12,6 @@ import ghcolors from "react-syntax-highlighter/dist/cjs/styles/prism/ghcolors";
 
 const components = {
   img({ node, ...props }) {
-    console.log("image props", props);
-
     return (
       <div className="relative w-full h-[500px]">
         <Image layout="fill" objectFit="contain" {...props} />
@@ -57,6 +55,7 @@ const components = {
   a({ node, className, ...props }) {
     return (
       <a
+        rel="noopener noreferrer"
         className={`${className} text-purple-700 dark:text-purple-400 underline hover:no-underline`}
         {...props}
       />
@@ -93,7 +92,12 @@ const Article = ({ article }) => {
 
       <section className="mb-12">
         <div className="relative w-full h-[200px] sm:h-[400px] mb-10">
-          <Image src={article.cover_image} layout="fill" objectFit="cover" />
+          <Image
+            src={article.cover_image}
+            layout="fill"
+            objectFit="cover"
+            alt={article.title}
+          />
         </div>
         <h1 className="m-auto text-5xl sm:text-6xl text-gray-900 dark:text-gray-50 font-headline font-bold">
           {article.title}
