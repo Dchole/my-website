@@ -4,7 +4,7 @@ import Github from "@/components/icons/github";
 import { useTheme } from "../theme/ThemeContext";
 
 const ProjectTile = ({ project, reversed }) => {
-  const { title, description, cover, source, demo, stack } = project;
+  const { title, description, cover, source, demo, stack, ...rest } = project;
   const { theme } = useTheme();
 
   return (
@@ -14,7 +14,9 @@ const ProjectTile = ({ project, reversed }) => {
       }`}
     >
       <Image
-        src={cover}
+        src={
+          !rest.dark_cover ? cover : theme === "light" ? rest.dark_cover : cover
+        }
         alt={title}
         width={1150}
         height={875}
@@ -34,10 +36,10 @@ const ProjectTile = ({ project, reversed }) => {
                 <Image
                   src={
                     /*  Toggle between dark and light icons */
-                    !rest["dark-mode-icon"] // Check if stack object has "dark-mode-icon" property
+                    !rest.dark_mode_icon // Check if stack object has "dark-mode-icon" property
                       ? icon // If it doesn't, always use the "icon" property
                       : theme === "dark" // Else check if we've toggled dark mode
-                      ? rest["dark-mode-icon"] // If we have, use the dark mode icon
+                      ? rest.dark_mode_icon // If we have, use the dark mode icon
                       : icon // If not, use the default icon
                   }
                   alt={name}
