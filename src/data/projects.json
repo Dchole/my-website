@@ -38,7 +38,7 @@
     "title": "Form Application",
     "cover": "/list-makerr.png",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde atque necessitatibus ratione natus commodi adipisci aperiam soluta magni, autem nostrum laboriosam vero voluptatum corporis rerum pariatur hic nihil eveniet id.",
-    "source": "https://github.com/Dchole/cat-wiki-challenge",
+    "source": "https://github.com/Dchole/list-maker",
     "demo": "https://list-makerr.herokuapp.com/",
     "stack": [
       {
@@ -68,7 +68,7 @@
     "cover": "/form-light.png",
     "dark_cover": "/form-dark.png",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde atque necessitatibus ratione natus commodi adipisci aperiam soluta magni, autem nostrum laboriosam vero voluptatum corporis rerum pariatur hic nihil eveniet id.",
-    "source": "https://github.com/Dchole/cat-wiki-challenge",
+    "source": "https://github.com/Dchole/TTA",
     "demo": "https://the-t0d0-app.herokuapp.com/",
     "stack": [
       {
