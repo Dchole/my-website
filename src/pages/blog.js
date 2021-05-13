@@ -6,8 +6,23 @@ import PopularArticles from "@/components/popular-articles";
 import formatDate from "@/utils/format-date";
 import getGists from "@/data/recent-gists";
 import { popularArticles, recentArticles } from "@/data/articles";
+import { useState } from "react";
 
 const Blog = ({ popularArticles, recentArticles, gists }) => {
+  const [articles, setArticles] = useState(recentArticles);
+
+  const handleInput = event => {
+    const filteredArticles = recentArticles.filter(article =>
+      article.title.toLowerCase().includes(event.target.value.toLowerCase())
+    );
+
+    console.log(filteredArticles);
+
+    event.target.value
+      ? setArticles(filteredArticles)
+      : setArticles(recentArticles);
+  };
+
   return (
     <>
       <Head>
@@ -43,11 +58,12 @@ const Blog = ({ popularArticles, recentArticles, gists }) => {
             placeholder="Search articles"
             aria-label="search articles"
             className="rounded-md border-2 border-gray-400 focus:outline-none focus:border-gray-900 dark:focus:border-gray-100 px-3 py-1 text-lg text-gray-700 dark:text-gray-100 dark:bg-gray-800 font-body tracking-body w-full"
+            onChange={handleInput}
           />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-12 mb-8">
-          {recentArticles.map(article => (
+          {articles.map(article => (
             <Link href={`/blog/${article.slug}`} key={article.id}>
               <a
                 aria-labelledby={`${article.slug}-title`}
