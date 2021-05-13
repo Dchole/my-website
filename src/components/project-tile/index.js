@@ -3,7 +3,7 @@ import ExternalLink from "@/components/icons/external-link";
 import Github from "@/components/icons/github";
 import { useTheme } from "../theme/ThemeContext";
 
-const ProjectTile = ({ project, reversed = false }) => {
+const ProjectTile = ({ project, reversed }) => {
   const { title, description, cover, source, demo, stack } = project;
   const { theme } = useTheme();
 
@@ -64,7 +64,7 @@ const ProjectTile = ({ project, reversed = false }) => {
             href={demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-purple-700 dark:text-purple-300 text-md font-body tracking-body flex justify-between items-center gap-1"
+            className="text-gray-50 dark:text-gray-900 bg-purple-700 hover:bg-purple-500 dark:bg-gray-100 dark:hover:bg-purple-200 py-2 px-4 text-md font-body font-medium tracking-body flex justify-between items-center gap-1 transition-colors"
           >
             Visit Site{" "}
             <span className="transform scale-60">

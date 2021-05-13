@@ -14,7 +14,7 @@ const Projects = ({ projects }) => {
       <div className="container max-w-screen-lg m-auto">
         <h1 className="sr-only">My Projects</h1>
 
-        <div className="mt-32">
+        <div className="mt-36 space-y-28">
           {projects.map((project, index) => (
             <ProjectTile
               key={project.title}
