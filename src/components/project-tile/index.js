@@ -9,8 +9,8 @@ const ProjectTile = ({ project, reversed }) => {
 
   return (
     <section
-      className={`flex gap-12 items-center ${
-        reversed ? "flex-row-reverse" : ""
+      className={`flex flex-col sm:flex-row gap-12 items-center ${
+        reversed ? "sm:flex-row-reverse" : ""
       }`}
     >
       <Image
