@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Link from "next/link";
 import ReactDOM from "react-dom";
 import FocusTrap from "focus-trap-react";
@@ -45,6 +46,11 @@ const Sidebar = ({ handleClose, open }) => {
     </FocusTrap>,
     document.querySelector("#__next")
   );
+};
+
+Sidebar.prototype = {
+  open: PropTypes.bool.isRequired,
+  handleClose: PropTypes.func.isRequired
 };
 
 export default Sidebar;

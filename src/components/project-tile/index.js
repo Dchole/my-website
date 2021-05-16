@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Image from "next/image";
 import ExternalLink from "@/components/icons/external-link";
 import Github from "@/components/icons/github";
@@ -77,6 +78,11 @@ const ProjectTile = ({ project, reversed }) => {
       </div>
     </section>
   );
+};
+
+ProjectTile.prototype = {
+  project: PropTypes.object.isRequired,
+  reversed: PropTypes.bool
 };
 
 export default ProjectTile;

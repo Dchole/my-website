@@ -1,3 +1,5 @@
+import PropType from "prop-types";
+
 const IconButton = ({ children, className = "", ...props }) => {
   return (
     <>
@@ -14,6 +16,11 @@ const IconButton = ({ children, className = "", ...props }) => {
       `}</style>
     </>
   );
+};
+
+IconButton.prototype = {
+  children: PropType.node,
+  className: PropType.string
 };
 
 export default IconButton;

@@ -19,6 +19,14 @@ const components = {
     );
   },
 
+  ol({ node, ...props }) {
+    return <ol className="list" {...props} />;
+  },
+
+  ul({ node, ...props }) {
+    return <ul className="list" {...props} />;
+  },
+
   h2({ node, className, ...props }) {
     return (
       <h2
@@ -126,6 +134,12 @@ const Article = ({ article }) => {
       >
         {article.body_markdown}
       </ReactMarkdown>
+      <style jsx>{`
+        .list {
+          list-style: revert;
+          padding: revert;
+        }
+      `}</style>
     </div>
   );
 };

@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Snippets = ({ snippets }) => {
   return (
     <section
@@ -35,6 +37,10 @@ const Snippets = ({ snippets }) => {
       </div>
     </section>
   );
+};
+
+Snippets.prototype = {
+  snippets: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default Snippets;

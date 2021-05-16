@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -64,6 +65,10 @@ const PopularArticles = ({ articles }) => {
       `}</style>
     </section>
   );
+};
+
+PopularArticles.prototype = {
+  articles: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default PopularArticles;
