@@ -1,12 +1,14 @@
-import PropTypes from "prop-types";
-import Image from "next/image";
-import ExternalLink from "@/components/icons/external-link";
-import Github from "@/components/icons/github";
-import { useTheme } from "../theme/ThemeContext";
+import PropTypes from "prop-types"
+import Image from "next/image"
+import ExternalLink from "@/components/icons/external-link"
+import Github from "@/components/icons/github"
+import useExtraSmall from "./useMobile"
+import { useTheme } from "../theme/ThemeContext"
 
 const ProjectTile = ({ project, reversed }) => {
-  const { title, description, cover, source, demo, stack, ...rest } = project;
-  const { theme } = useTheme();
+  const { title, description, cover, source, demo, stack, ...rest } = project
+  const { theme } = useTheme()
+  const xs = useExtraSmall()
 
   return (
     <section
@@ -57,8 +59,9 @@ const ProjectTile = ({ project, reversed }) => {
             target="_blank"
             rel="noopener noreferrer"
             className="text-purple-700 dark:text-purple-300 text-md font-body tracking-body flex justify-between items-center gap-1"
+            aria-label={`view ${title}'s source code`}
           >
-            View Source Code{" "}
+            {xs ? "Source Code" : "View Source Code"}{" "}
             <span className="transform scale-60">
               <Github />
             </span>
@@ -68,6 +71,7 @@ const ProjectTile = ({ project, reversed }) => {
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-50 dark:text-gray-900 bg-purple-700 hover:bg-purple-500 dark:bg-gray-100 dark:hover:bg-purple-200 py-2 px-4 text-md font-body font-medium tracking-body flex justify-between items-center gap-1 transition-colors"
+            aria-label={`visit ${title}`}
           >
             Visit Site{" "}
             <span className="transform scale-60">
@@ -77,12 +81,12 @@ const ProjectTile = ({ project, reversed }) => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
 ProjectTile.prototype = {
   project: PropTypes.object.isRequired,
   reversed: PropTypes.bool
-};
+}
 
-export default ProjectTile;
+export default ProjectTile

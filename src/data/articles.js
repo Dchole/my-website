@@ -3,18 +3,18 @@ export const getArticles = async () =>
     headers: {
       "api-key": process.env.DEV_API_KEY
     }
-  }).then(res => res.json());
+  }).then(res => res.json())
 
 export const popularArticles = async () => {
-  const articles = await getArticles();
+  const articles = await getArticles()
 
   return articles
     .sort((a, b) => b.page_views_count - a.page_views_count) // Sort articles by page view count
-    .slice(0, 3);
-};
+    .slice(0, 3)
+}
 
 export const recentArticles = async () => {
-  const articles = await getArticles();
+  const articles = await getArticles()
 
-  return articles.slice(0, 10);
-};
+  return articles.slice(0, 10)
+}
