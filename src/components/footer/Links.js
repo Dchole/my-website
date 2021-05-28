@@ -30,7 +30,7 @@ const Links = () => {
           </ul>
           {align === "md:text-center" && (
             <div className="my-5">
-              <h4 className="text-gray-800 dark:text-gray-200 text-xl font-headline font-semibold mb-2">
+              <h4 className="text-gray-800 dark:text-gray-200 text-xl md:text-center font-headline font-semibold mb-2">
                 Github
               </h4>
               <ul className="space-y-2">
