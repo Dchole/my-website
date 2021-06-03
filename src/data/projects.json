@@ -64,12 +64,11 @@
     ]
   },
   {
-    "title": "Todo App",
-    "cover": "/form-light.png",
-    "dark_cover": "/form-dark.png",
+    "title": "SpaceX Launches",
+    "cover": "/space-explorer.png",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde atque necessitatibus ratione natus commodi adipisci aperiam soluta magni, autem nostrum laboriosam vero voluptatum corporis rerum pariatur hic nihil eveniet id.",
-    "source": "https://github.com/Dchole/TTA",
-    "demo": "https://the-t0d0-app.herokuapp.com/",
+    "source": "https://github.com/Dchole/ApolloGraphQL",
+    "demo": "https://space-explorer-tan.vercel.app/",
     "stack": [
       {
         "name": "React",
@@ -80,6 +79,11 @@
         "name": "Material UI",
         "url": "https://material-ui.com",
         "icon": "/material-ui.svg"
+      },
+      {
+        "name": "GraphQL",
+        "url": "https://graphql.com/",
+        "icon": "/graphql.svg"
       },
       {
         "name": "MongoDB",

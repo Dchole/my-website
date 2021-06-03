@@ -6,7 +6,7 @@ import useExtraSmall from "./useMobile"
 import { useTheme } from "../theme/ThemeContext"
 
 const ProjectTile = ({ project, reversed }) => {
-  const { title, description, cover, source, demo, stack, ...rest } = project
+  const { title, description, cover, source, demo, stack } = project
   const { theme } = useTheme()
   const xs = useExtraSmall()
 
@@ -17,9 +17,7 @@ const ProjectTile = ({ project, reversed }) => {
       }`}
     >
       <Image
-        src={
-          !rest.dark_cover ? cover : theme === "light" ? rest.dark_cover : cover
-        }
+        src={cover}
         alt={title}
         width={1150}
         height={875}
