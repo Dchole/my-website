@@ -1,14 +1,14 @@
-import Head from "next/head";
-import Image from "next/image";
-import ReactMarkdown from "react-markdown";
-import gfm from "remark-gfm";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { getArticles } from "@/data/articles";
-import { useTheme } from "@/components/theme/ThemeContext";
-import getArticle from "@/data/article";
-import createHue from "@/utils/create-hue";
-import vscDarkPlus from "react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus";
-import ghcolors from "react-syntax-highlighter/dist/cjs/styles/prism/ghcolors";
+import Head from "next/head"
+import Image from "next/image"
+import ReactMarkdown from "react-markdown"
+import gfm from "remark-gfm"
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import { getArticles } from "@/data/articles"
+import { useTheme } from "@/components/theme/ThemeContext"
+import getArticle from "@/data/article"
+import createHue from "@/utils/create-hue"
+import vscDarkPlus from "react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus"
+import ghcolors from "react-syntax-highlighter/dist/cjs/styles/prism/ghcolors"
 
 const components = {
   img({ node, ...props }) {
@@ -16,15 +16,15 @@ const components = {
       <div className="relative w-full h-[500px]">
         <Image layout="fill" objectFit="contain" {...props} />
       </div>
-    );
+    )
   },
 
   ol({ node, ...props }) {
-    return <ol className="list" {...props} />;
+    return <ol className="list" {...props} />
   },
 
   ul({ node, ...props }) {
-    return <ul className="list" {...props} />;
+    return <ul className="list" {...props} />
   },
 
   h2({ node, className, ...props }) {
@@ -33,7 +33,7 @@ const components = {
         className={`${className} text-3xl sm:text-4xl font-headline font-semibold my-6`}
         {...props}
       />
-    );
+    )
   },
 
   h3({ node, className, ...props }) {
@@ -42,7 +42,7 @@ const components = {
         className={`${className} text-2xl sm:text-3xl text-gray-800 dark:text-gray-200 font-headline font-semibold my-5`}
         {...props}
       />
-    );
+    )
   },
 
   p({ node, children, className, ...props }) {
@@ -57,7 +57,7 @@ const components = {
       >
         {children}
       </p>
-    );
+    )
   },
 
   a({ node, className, ...props }) {
@@ -67,12 +67,12 @@ const components = {
         className={`${className} text-purple-700 dark:text-purple-400 underline hover:no-underline`}
         {...props}
       />
-    );
+    )
   },
 
   code({ node, inline, className, children, ...props }) {
-    const match = /language-(\w+)/.exec(className || "");
-    const { theme } = useTheme();
+    const match = /language-(\w+)/.exec(className || "")
+    const { theme } = useTheme()
 
     return !inline && match ? (
       <SyntaxHighlighter
@@ -86,9 +86,9 @@ const components = {
       />
     ) : (
       <code className={className} {...props} />
-    );
+    )
   }
-};
+}
 
 const Article = ({ article }) => {
   return (
@@ -141,20 +141,20 @@ const Article = ({ article }) => {
         }
       `}</style>
     </div>
-  );
-};
+  )
+}
 
 export const getStaticPaths = async () => {
-  const allArticles = await getArticles();
-  const paths = allArticles.map(post => ({ params: { slug: post.slug } }));
+  const allArticles = await getArticles()
+  const paths = allArticles.map(post => ({ params: { slug: post.slug } }))
 
-  return { paths, fallback: false };
-};
+  return { paths, fallback: false }
+}
 
 export const getStaticProps = async ({ params }) => {
-  const article = await getArticle(params.slug);
+  const article = await getArticle(params.slug)
 
-  return { props: { article } };
-};
+  return { props: { article } }
+}
 
-export default Article;
+export default Article
