@@ -1,4 +1,5 @@
 import Head from "next/head"
+import Image from "next/image"
 import { getArticles } from "@/data/articles"
 import getArticle from "@/data/article"
 
