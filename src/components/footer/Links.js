@@ -21,7 +21,7 @@ const Links = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={rest.aria}
-                  className="text-gray-600 dark:text-gray-400 hover:text-purple-700 font-body tracking-body"
+                  className="text-gray-600 dark:text-gray-400 hover:text-purple-700 dark:hover:text-purple-400 font-body tracking-body"
                 >
                   {name}
                 </a>
