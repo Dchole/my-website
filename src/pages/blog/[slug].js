@@ -22,11 +22,15 @@ const components = {
   },
 
   ol({ node, ...props }) {
-    return <ol className="list" {...props} />
+    return <ol className="list-decimal m-[revert] p-[revert] mb-3" {...props} />
   },
 
   ul({ node, ...props }) {
-    return <ul className="list" {...props} />
+    return <ul className="list-disc m-[revert] p-[revert] mb-3" {...props} />
+  },
+
+  li({ node, ...props }) {
+    return <li className="text-lg md:text-xl mt-1 md:mt-3" {...props} />
   },
 
   h2({ node, className, ...props }) {
@@ -54,7 +58,7 @@ const components = {
       </div>
     ) : (
       <p
-        className={`text-gray-600 text-lg dark:text-gray-300 font-body font-normal tracking-body`}
+        className={`m-[revert] text-gray-600 text-lg md:text-xl dark:text-gray-300 font-body font-normal tracking-body`}
         {...props}
       >
         {children}
@@ -112,14 +116,14 @@ const Article = ({ article }) => {
         <h1 className="m-auto text-5xl sm:text-6xl text-gray-900 dark:text-gray-50 font-headline font-bold">
           {article.title}
         </h1>
-        <div className="mt-4 mb-10 m-auto">
+        <div className="mt-4 mb-10 m-auto max-w-full flex flex-wrap gap-6">
           {article.tags.map((tag, index) => (
             <em
               key={tag}
               style={{
                 backgroundColor: `hsl(${createHue(index)}, 90%, 83%)`
               }}
-              className="mr-6 p-1 font-body tracking-body text-sm"
+              className="p-1 font-body tracking-body text-sm"
             >
               #{tag}
             </em>
