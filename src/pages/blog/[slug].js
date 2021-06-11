@@ -3,6 +3,7 @@ import { getArticles } from "@/data/articles"
 import getArticle from "@/data/article"
 
 const Article = ({ article }) => {
+  console.log({ article })
   return (
     <div className="container max-w-screen-lg m-auto mt-28">
       <Head>
