@@ -8,9 +8,9 @@ import { useTheme } from "@/components/theme/ThemeContext"
 import getArticle from "@/data/article"
 import createHue from "@/utils/create-hue"
 import {
-  a11yDark,
-  a11yLight
-} from "/node_modules/react-syntax-highlighter/dist/esm/styles/hljs"
+  vscDarkPlus,
+  ghcolors
+} from "react-syntax-highlighter/dist/cjs/styles/prism"
 
 const components = {
   img({ node, ...props }) {
@@ -79,7 +79,7 @@ const components = {
     return !inline && match ? (
       <SyntaxHighlighter
         codeTagProps={{ className: "font-code", ...props }}
-        style={theme === "dark" ? a11yDark : a11yLight}
+        style={theme === "dark" ? vscDarkPlus : ghcolors}
         language={match[1]}
         PreTag="div"
         children={String(children).replace(/\n$/, "")}
