@@ -134,6 +134,7 @@ const Article = ({ article }) => {
       >
         {article.body_markdown}
       </ReactMarkdown>
+
       <style jsx>{`
         .list {
           list-style: revert;
