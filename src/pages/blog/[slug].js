@@ -7,8 +7,8 @@ import { getArticles } from "@/data/articles"
 import { useTheme } from "@/components/theme/ThemeContext"
 import getArticle from "@/data/article"
 import createHue from "@/utils/create-hue"
-import vscDarkPlus from "react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus"
-import ghcolors from "react-syntax-highlighter/dist/cjs/styles/prism/ghcolors"
+import vscDarkPlus from "/node_modules/react-syntax-highlighter/dist/esm/styles/prism/vsc-dark-plus"
+import ghcolors from "/node_modules/react-syntax-highlighter/dist/esm/styles/prism/ghcolors"
 
 const components = {
   img({ node, ...props }) {
