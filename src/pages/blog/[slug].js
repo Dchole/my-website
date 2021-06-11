@@ -30,7 +30,12 @@ const components = {
   },
 
   li({ node, ...props }) {
-    return <li className="text-lg md:text-xl mt-1 md:mt-3" {...props} />
+    return (
+      <li
+        className="text-lg md:text-xl mt-1 md:mt-3 text-gray-700 dark:text-gray-300"
+        {...props}
+      />
+    )
   },
 
   h2({ node, className, ...props }) {
@@ -58,12 +63,16 @@ const components = {
       </div>
     ) : (
       <p
-        className={`m-[revert] text-gray-600 text-lg md:text-xl dark:text-gray-300 font-body font-normal tracking-body`}
+        className={`m-[revert] text-gray-600 text-lg md:text-xl dark:text-gray-400 font-body font-normal tracking-body`}
         {...props}
       >
         {children}
       </p>
     )
+  },
+
+  strong({ node, ...props }) {
+    return <strong className="text-gray-700 dark:text-gray-300" {...props} />
   },
 
   a({ node, className, ...props }) {
@@ -134,19 +143,12 @@ const Article = ({ article }) => {
       <ReactMarkdown
         remarkPlugins={[gfm]}
         components={components}
-        className="max-w-[75ch] m-auto text-gray-900 dark:text-gray-100 transition-colors"
+        className="max-w-[80ch] m-auto text-gray-900 dark:text-gray-100 transition-colors"
         linkTarget="_blank"
         skipHtml
       >
         {article.body_markdown}
       </ReactMarkdown>
-
-      <style jsx>{`
-        .list {
-          list-style: revert;
-          padding: revert;
-        }
-      `}</style>
     </div>
   )
 }
