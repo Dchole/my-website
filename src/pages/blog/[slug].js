@@ -1,7 +1,94 @@
 import Head from "next/head"
 import Image from "next/image"
+import ReactMarkdown from "react-markdown"
+import gfm from "remark-gfm"
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { getArticles } from "@/data/articles"
+import { useTheme } from "@/components/theme/ThemeContext"
 import getArticle from "@/data/article"
+import createHue from "@/utils/create-hue"
+import vscDarkPlus from "react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus"
+import ghcolors from "react-syntax-highlighter/dist/cjs/styles/prism/ghcolors"
+
+const components = {
+  img({ node, ...props }) {
+    return (
+      <div className="relative w-full h-[500px]">
+        <Image layout="fill" objectFit="contain" {...props} />
+      </div>
+    )
+  },
+
+  ol({ node, ...props }) {
+    return <ol className="list" {...props} />
+  },
+
+  ul({ node, ...props }) {
+    return <ul className="list" {...props} />
+  },
+
+  h2({ node, className, ...props }) {
+    return (
+      <h2
+        className={`${className} text-3xl sm:text-4xl font-headline font-semibold my-6`}
+        {...props}
+      />
+    )
+  },
+
+  h3({ node, className, ...props }) {
+    return (
+      <h3
+        className={`${className} text-2xl sm:text-3xl text-gray-800 dark:text-gray-200 font-headline font-semibold my-5`}
+        {...props}
+      />
+    )
+  },
+
+  p({ node, children, className, ...props }) {
+    return children[0]?.props?.src ? (
+      <div className={className} {...props}>
+        {children}
+      </div>
+    ) : (
+      <p
+        className={`text-gray-600 text-lg dark:text-gray-300 font-body font-normal tracking-body`}
+        {...props}
+      >
+        {children}
+      </p>
+    )
+  },
+
+  a({ node, className, ...props }) {
+    return (
+      <a
+        rel="noopener noreferrer"
+        className={`${className} text-purple-700 dark:text-purple-400 underline hover:no-underline`}
+        {...props}
+      />
+    )
+  },
+
+  code({ node, inline, className, children, ...props }) {
+    const match = /language-(\w+)/.exec(className || "")
+    const { theme } = useTheme()
+
+    return !inline && match ? (
+      <SyntaxHighlighter
+        codeTagProps={{ className: "font-code", ...props }}
+        style={theme === "dark" ? vscDarkPlus : ghcolors}
+        language={match[1]}
+        PreTag="div"
+        children={String(children).replace(/\n$/, "")}
+        customStyle={{ margin: "1.5rem 0" }}
+        {...props}
+      />
+    ) : (
+      <code className={className} {...props} />
+    )
+  }
+}
 
 const Article = ({ article }) => {
   return (
