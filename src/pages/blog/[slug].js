@@ -63,7 +63,7 @@ const components = {
       </div>
     ) : (
       <p
-        className={`m-[revert] text-gray-700 text-lg md:text-xl dark:text-gray-300 font-body font-normal tracking-body`}
+        className="m-[revert] text-gray-700 text-lg md:text-xl dark:text-gray-300 font-body font-normal tracking-body"
         {...props}
       >
         {children}

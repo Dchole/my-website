@@ -4,10 +4,6 @@ const links = [
     path: "/"
   },
   {
-    label: "About Me",
-    path: "/about"
-  },
-  {
     label: "Blog",
     path: "/blog"
   },
@@ -15,6 +11,6 @@ const links = [
     label: "Projects",
     path: "/projects"
   }
-];
+]
 
-export default links;
+export default links
