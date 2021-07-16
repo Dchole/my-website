@@ -1,8 +1,8 @@
-import Head from "next/head";
-import PopularArticles from "@/components/popular-articles";
-import Snippets from "@/components/code-snippets";
-import getGists from "@/data/recent-gists";
-import { popularArticles } from "@/data/articles";
+import Head from "next/head"
+import PopularArticles from "@/components/popular-articles"
+import Snippets from "@/components/code-snippets"
+import getGists from "@/data/recent-gists"
+import { popularArticles } from "@/data/articles"
 
 export default function Home({ articles, gists }) {
   return (
@@ -26,9 +26,12 @@ export default function Home({ articles, gists }) {
             </p>
           </div>
           <div id="call-to-action" className="w-[fit-content] sm:m-auto">
-            <button className="py-2 px-4 text-sm leading-relaxed tracking-wider uppercase text-white dark:text-gray-900 font-body font-medium bg-purple-600 dark:bg-purple-400 hover:bg-purple-500 dark:hover:bg-purple-500 shadow-md hover:shadow-lg active:bg-purple-700 active:shadow-none transform transition">
+            <a
+              href="tel:+233248245692"
+              className="py-2 px-4 text-sm leading-relaxed tracking-wider uppercase text-white dark:text-gray-900 font-body font-medium bg-purple-600 dark:bg-purple-400 hover:bg-purple-500 dark:hover:bg-purple-500 shadow-md hover:shadow-lg active:bg-purple-700 active:shadow-none transform transition"
+            >
               Contact Me
-            </button>
+            </a>
           </div>
         </section>
       </div>
@@ -47,14 +50,14 @@ export default function Home({ articles, gists }) {
         }
       `}</style>
     </div>
-  );
+  )
 }
 
 export const getStaticProps = async () => {
-  const articles = await popularArticles();
-  const gists = await getGists();
+  const articles = await popularArticles()
+  const gists = await getGists()
 
   return {
     props: { articles, gists }
-  };
-};
+  }
+}
