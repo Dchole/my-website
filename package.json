@@ -13,12 +13,12 @@
     "@fontsource/roboto": "^4.2.3",
     "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^10.2.0",
-    "autoprefixer": "^10.2.5",
+    "autoprefixer": "^10.2.6",
     "base-64": "^1.0.0",
     "focus-trap-react": "^8.5.0",
     "next": "10.x",
     "nprogress": "^0.2.0",
-    "postcss": "^8.2.13",
+    "postcss": "^8.3.2",
     "prism-react-renderer": "^1.2.0",
     "prop-types": "^15.7.2",
     "react": "17.x",
@@ -26,7 +26,7 @@
     "react-markdown": "^6.0.2",
     "react-syntax-highlighter": "^15.4.3",
     "remark-gfm": "^1.0.0",
-    "tailwindcss": "^2.1.2"
+    "tailwindcss": "^2.1.4"
   },
   "devDependencies": {
     "preact": "^10.5.13"

@@ -2,7 +2,7 @@
   {
     "title": "CatWiki",
     "cover": "/catwiki.png",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde atque necessitatibus ratione natus commodi adipisci aperiam soluta magni, autem nostrum laboriosam vero voluptatum corporis rerum pariatur hic nihil eveniet id.",
+    "description": "A website about varieties of breeds of cats. I built this project as part of the challenges on devchallenges.io. The goal was to all breeds of cats from an API, customize the API on a custom server and then serve to the client.",
     "source": "https://github.com/Dchole/cat-wiki-challenge",
     "demo": "https://cat-wiki-challenge.vercel.app",
     "stack": [
@@ -35,9 +35,9 @@
     ]
   },
   {
-    "title": "Forms Application",
+    "title": "Form Application",
     "cover": "/list-makerr.png",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde atque necessitatibus ratione natus commodi adipisci aperiam soluta magni, autem nostrum laboriosam vero voluptatum corporis rerum pariatur hic nihil eveniet id.",
+    "description": "This is a minimalist form application I created to automate data collection at my school. The process of collecting data from students was tedious and annoying so I created a simple form application to get information from students and parse it into spreadsheet data",
     "source": "https://github.com/Dchole/list-maker",
     "demo": "https://list-makerr.herokuapp.com/",
     "stack": [
@@ -66,7 +66,7 @@
   {
     "title": "SpaceX Launches",
     "cover": "/space-explorer.png",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde atque necessitatibus ratione natus commodi adipisci aperiam soluta magni, autem nostrum laboriosam vero voluptatum corporis rerum pariatur hic nihil eveniet id.",
+    "description": "This is a full Progressive Web App built with React and apollo-client. it works offline-first and uses background-sync to complete failed user actions and notify users when sync is successful. The dynamic data is also stored in indexedDB so the app has 100% usability",
     "source": "https://github.com/Dchole/ApolloGraphQL",
     "demo": "https://space-explorer-tan.vercel.app/",
     "stack": [
