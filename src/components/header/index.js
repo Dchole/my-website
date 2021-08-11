@@ -1,26 +1,26 @@
-import { useContext, useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
-import dynamic from "next/dynamic";
-import SunIcon from "../icons/sun";
-import links from "./links";
-import Menu from "../icons/menu";
-import IconButton from "../IconButton";
-import Moon from "../icons/moon";
-import { useTheme } from "../theme/ThemeContext";
+import { useState } from "react"
+import { useRouter } from "next/router"
+import Link from "next/link"
+import dynamic from "next/dynamic"
+import SunIcon from "../icons/sun"
+import links from "./links"
+import Menu from "../icons/menu"
+import IconButton from "../IconButton"
+import Moon from "../icons/moon"
+import { useTheme } from "../theme/ThemeContext"
 
-const Sidebar = dynamic(() => import("../side-bar"), { ssr: false });
+const Sidebar = dynamic(() => import("../side-bar"), { ssr: false })
 
 const Header = () => {
-  const { pathname } = useRouter();
-  const [open, setOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
+  const { pathname } = useRouter()
+  const [open, setOpen] = useState(false)
+  const { theme, toggleTheme } = useTheme()
 
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
 
   const handleToggleTheme = event => {
-    toggleTheme();
+    toggleTheme()
 
     event.currentTarget.animate(
       [
@@ -42,8 +42,8 @@ const Header = () => {
         duration: 800,
         easing: "ease-out"
       }
-    );
-  };
+    )
+  }
 
   return (
     <header className="absolute w-full top-0 z-50">
@@ -114,7 +114,7 @@ const Header = () => {
         }
       `}</style>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

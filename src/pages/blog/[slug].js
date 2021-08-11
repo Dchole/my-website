@@ -1,16 +1,18 @@
+import "@fontsource/fira-code/400.css"
+
 import Head from "next/head"
 import Image from "next/image"
 import ReactMarkdown from "react-markdown"
 import gfm from "remark-gfm"
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import {
+  Prism as SyntaxHighlighter,
+  vscDarkPlus,
+  ghcolors
+} from "react-syntax-highlighter"
 import { getArticles } from "@/data/articles"
 import { useTheme } from "@/components/theme/ThemeContext"
 import getArticle from "@/data/article"
 import createHue from "@/utils/create-hue"
-import {
-  vscDarkPlus,
-  ghcolors
-} from "react-syntax-highlighter/dist/cjs/styles/prism"
 
 const components = {
   img({ node, ...props }) {
@@ -86,8 +88,9 @@ const components = {
   },
 
   code({ node, inline, className, children, ...props }) {
-    const match = /language-(\w+)/.exec(className || "")
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const { theme } = useTheme()
+    const match = /language-(\w+)/.exec(className || "")
 
     return !inline && match ? (
       <SyntaxHighlighter
@@ -95,10 +98,11 @@ const components = {
         style={theme === "dark" ? vscDarkPlus : ghcolors}
         language={match[1]}
         PreTag="div"
-        children={String(children).replace(/\n$/, "")}
         customStyle={{ margin: "1.5rem 0" }}
         {...props}
-      />
+      >
+        {String(children).replace(/\n$/, "")}
+      </SyntaxHighlighter>
     ) : (
       <code className={className} {...props} />
     )

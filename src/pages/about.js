@@ -24,7 +24,7 @@ const About = () => {
         </p>
         <p className="mt-4 text-gray-600 dark:text-gray-300 font-body tracking-body">
           I started my journey with HTML5 canvas and then jumped into React.
-          I've been in the React ecosystem ever since.
+          I&apos;ve been in the React ecosystem ever since.
         </p>
       </div>
     </>

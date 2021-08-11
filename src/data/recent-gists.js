@@ -1,33 +1,33 @@
-import base64 from "base-64";
+import base64 from "base-64"
 
 const addTitle = gists => {
-  const snippets = [...gists];
+  const snippets = [...gists]
 
   snippets.forEach((gist, index) => {
     switch (index) {
       case 0:
-        gist.title = "Custom Upload Button";
-        break;
+        gist.title = "Material ButtonLink"
+        break
 
       case 1:
-        gist.title = "Error Handling";
-        break;
+        gist.title = "Error Handling"
+        break
 
       case 2:
-        gist.title = "Device Detection Hook";
-        break;
+        gist.title = "Device Detection Hook"
+        break
 
       case 3:
-        gist.title = "VSCode Snippets";
-        break;
+        gist.title = "VSCode Snippets"
+        break
 
       default:
-        break;
+        break
     }
-  });
+  })
 
-  return snippets;
-};
+  return snippets
+}
 
 const getGists = async () => {
   const gists = await fetch("https://api.github.com/gists", {
@@ -37,9 +37,9 @@ const getGists = async () => {
         `dchole:${process.env.GITHUB_TOKEN}`
       )}`
     }
-  }).then(res => res.json());
+  }).then(res => res.json())
 
-  return addTitle(gists.slice(0, 4));
-};
+  return addTitle(gists.slice(0, 4))
+}
 
-export default getGists;
+export default getGists

@@ -8,27 +8,31 @@
     "start": "next start"
   },
   "dependencies": {
-    "@fontsource/fira-code": "^4.3.0",
-    "@fontsource/nunito-sans": "^4.2.2",
-    "@fontsource/roboto": "^4.2.3",
+    "@fontsource/fira-code": "^4.5.0",
+    "@fontsource/nunito-sans": "^4.5.0",
+    "@fontsource/roboto": "^4.5.0",
     "@mdx-js/loader": "^1.6.22",
-    "@next/mdx": "^10.2.0",
-    "autoprefixer": "^10.2.6",
+    "@next/mdx": "^11.0.1",
+    "autoprefixer": "^10.3.1",
     "base-64": "^1.0.0",
-    "focus-trap-react": "^8.5.0",
-    "next": "10.x",
+    "focus-trap-react": "^8.7.0",
+    "next": "11.0.1",
+    "next-seo": "^4.26.0",
     "nprogress": "^0.2.0",
-    "postcss": "^8.3.2",
-    "prism-react-renderer": "^1.2.0",
+    "postcss": "^8.3.6",
+    "prism-react-renderer": "^1.2.1",
     "prop-types": "^15.7.2",
-    "react": "17.x",
-    "react-dom": "17.x",
-    "react-markdown": "^6.0.2",
-    "react-syntax-highlighter": "^15.4.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-markdown": "^6.0.3",
+    "react-syntax-highlighter": "^15.4.4",
     "remark-gfm": "^1.0.0",
-    "tailwindcss": "^2.1.4"
+    "tailwindcss": "^2.2.7"
   },
   "devDependencies": {
-    "preact": "^10.5.13"
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^11.0.1",
+    "next-transpile-modules": "^8.0.0",
+    "preact": "^10.5.14"
   }
 }
