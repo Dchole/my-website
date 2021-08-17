@@ -2,7 +2,7 @@
  * Format date to show human readable date.
  * Show day and month if published date is in current year.
  * Show day, month and year if published date is in previous year.
- * @constructor
+ * @function
  * @param {string} date - date string from data source
  * @returns {string} returns parsed or formatted date string
  */

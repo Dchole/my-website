@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 
 const Snippets = ({ snippets }) => {
   return (
@@ -21,7 +21,7 @@ const Snippets = ({ snippets }) => {
             target="_blank"
             rel="noopener noreferrer"
             aria-labelledby={snippet.node_id}
-            className="p-3 w-full sm:w-[48%] lg:w-[initial] dark:bg-gray-800 border border-gray-200 dark:border-gray-900 border-solid rounded-lg hover:bg-purple-50 dark:hover:bg-gray-600 hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:bg-purple-50 dark:focus:bg-gray-600 focus:shadow-lg focus:-translate-y-1 active:bg-purple-100 dark:active:bg-gray-900 active:translate-y-0 active:shadow-none transform transition"
+            className="p-3 w-full sm:w-[48%] dark:bg-gray-800 border border-gray-200 dark:border-gray-900 border-solid rounded-lg hover:bg-purple-50 dark:hover:bg-gray-600 hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:bg-purple-50 dark:focus:bg-gray-600 focus:shadow-lg focus:-translate-y-1 active:bg-purple-100 dark:active:bg-gray-900 active:translate-y-0 active:shadow-none transform transition"
           >
             <h4
               id={snippet.node_id}
@@ -36,11 +36,11 @@ const Snippets = ({ snippets }) => {
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
 Snippets.prototype = {
   snippets: PropTypes.arrayOf(PropTypes.object).isRequired
-};
+}
 
-export default Snippets;
+export default Snippets

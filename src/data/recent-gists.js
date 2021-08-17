@@ -6,19 +6,19 @@ const addTitle = gists => {
   snippets.forEach((gist, index) => {
     switch (index) {
       case 0:
-        gist.title = "Material ButtonLink"
+        gist.title = "useDebounce Hook"
         break
 
       case 1:
-        gist.title = "Error Handling"
+        gist.title = "Material ButtonLink"
         break
 
       case 2:
-        gist.title = "Device Detection Hook"
+        gist.title = "Error Handling"
         break
 
       case 3:
-        gist.title = "VSCode Snippets"
+        gist.title = "Device Detection Hook"
         break
 
       default:

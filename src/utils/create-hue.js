@@ -1,6 +1,6 @@
 /**
  * Create a Random hue for hsl color.
- * @constructor
+ * @function
  * @param {string} index - Index of the tag we're generating the hue for.
  * @returns {number} returns generated hue number
  */
