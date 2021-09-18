@@ -39,7 +39,7 @@ const getGists = async () => {
     }
   }).then(res => res.json())
 
-  return addTitle(gists.slice(0, 4))
+  return addTitle(gists.slice(1, 5))
 }
 
 export default getGists
