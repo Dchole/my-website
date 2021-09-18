@@ -19,10 +19,10 @@ export default function Home({ articles, gists }) {
               Hey <span aria-hidden>👋</span>, I&apos;m Derek Oware
             </h1>
             <p className="text-lg sm:text-center sm:m-auto text-gray-600 dark:text-gray-400 tracking-body font-body italic max-w-prose">
-              I&apos;m a full-stack web developer with love and enthusiasm for
-              creating and experimenting with modern web technologies. I
-              specialize mostly on frontend technologies specifically in the
-              React ecosystem
+              I&apos;m a front-end web developer from Ghana, with over 3 years
+              of experience in React.js and its ecosystem. Creating software and
+              solving complex problems are my passion and hobby. I take pride in
+              helping my clients succeed and see their vision come to life.
             </p>
           </div>
           <div id="call-to-action" className="w-[fit-content] sm:m-auto">

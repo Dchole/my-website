@@ -7,10 +7,10 @@ const links = [
     label: "Blog",
     path: "/blog"
   },
-  {
-    label: "About Me",
-    path: "/about"
-  },
+  // {
+  //   label: "About Me",
+  //   path: "/about"
+  // },
   {
     label: "Projects",
     path: "/projects"
