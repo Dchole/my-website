@@ -25,7 +25,10 @@ export default function Home({ articles, gists }) {
               helping my clients succeed and see their vision come to life.
             </p>
           </div>
-          <div id="call-to-action" className="w-[fit-content] sm:m-auto">
+          <div
+            id="call-to-action"
+            className="w-[fit-content] sm:m-auto mt-6 sm:mt-8"
+          >
             <a
               href="mailto:derekoware47@gmail.com"
               className="py-2 px-4 text-sm leading-relaxed tracking-wider uppercase text-white dark:text-gray-900 font-body font-medium bg-purple-600 dark:bg-purple-400 hover:bg-purple-500 dark:hover:bg-purple-500 shadow-md hover:shadow-lg active:bg-purple-700 active:shadow-none transform transition"
