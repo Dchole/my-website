@@ -1,27 +1,25 @@
-import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
-import Snippets from "@/components/code-snippets";
-import PopularArticles from "@/components/popular-articles";
-import formatDate from "@/utils/format-date";
-import getGists from "@/data/recent-gists";
-import { popularArticles, recentArticles } from "@/data/articles";
-import { useState } from "react";
+import Head from "next/head"
+import Link from "next/link"
+import Image from "next/image"
+import Snippets from "@/components/code-snippets"
+import PopularArticles from "@/components/popular-articles"
+import formatDate from "@/utils/format-date"
+import getGists from "@/data/recent-gists"
+import { popularArticles, recentArticles } from "@/data/articles"
+import { useState } from "react"
 
 const Blog = ({ popularArticles, recentArticles, gists }) => {
-  const [articles, setArticles] = useState(recentArticles);
+  const [articles, setArticles] = useState(recentArticles)
 
   const handleInput = event => {
     const filteredArticles = recentArticles.filter(article =>
       article.title.toLowerCase().includes(event.target.value.toLowerCase())
-    );
-
-    console.log(filteredArticles);
+    )
 
     event.target.value
       ? setArticles(filteredArticles)
-      : setArticles(recentArticles);
-  };
+      : setArticles(recentArticles)
+  }
 
   return (
     <>
@@ -70,14 +68,16 @@ const Blog = ({ popularArticles, recentArticles, gists }) => {
                 className="article-link p-6 focus:outline-none rounded-lg focus:bg-gray-200 dark:focus:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 focus:shadow-md focus:-translate-y-1 hover:-translate-y-1 hover:shadow-md active:bg-gray-300 dark:active:bg-gray-800 active:shadow-none active:translate-y-0 transform transition"
               >
                 <article id={article.slug} className="relative h-full w-full">
-                  <div className="relative h-52">
-                    <Image
-                      src={`${article.cover_image}`}
-                      alt={article.title}
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                  </div>
+                  {article.cover_image && (
+                    <div className="relative h-52">
+                      <Image
+                        src={article.cover_image}
+                        alt={article.title}
+                        layout="fill"
+                        objectFit="cover"
+                      />
+                    </div>
+                  )}
                   <div className="mb-8">
                     <h3
                       id={`${article.slug}-title`}
@@ -100,13 +100,13 @@ const Blog = ({ popularArticles, recentArticles, gists }) => {
       </section>
       <Snippets snippets={gists} />
     </>
-  );
-};
+  )
+}
 
 export const getStaticProps = async () => {
-  const popular = await popularArticles();
-  const recent = await recentArticles();
-  const gists = await getGists();
+  const popular = await popularArticles()
+  const recent = await recentArticles()
+  const gists = await getGists()
 
   return {
     props: {
@@ -114,7 +114,7 @@ export const getStaticProps = async () => {
       recentArticles: recent,
       gists
     }
-  };
-};
+  }
+}
 
-export default Blog;
+export default Blog

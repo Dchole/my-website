@@ -4,11 +4,11 @@ import Head from "next/head"
 import Image from "next/image"
 import ReactMarkdown from "react-markdown"
 import gfm from "remark-gfm"
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import {
-  Prism as SyntaxHighlighter,
-  vscDarkPlus,
-  ghcolors
-} from "react-syntax-highlighter"
+  ghcolors,
+  vscDarkPlus
+} from "react-syntax-highlighter/dist/cjs/styles/prism"
 import { getArticles } from "@/data/articles"
 import { useTheme } from "@/components/theme/ThemeContext"
 import getArticle from "@/data/article"
@@ -118,14 +118,16 @@ const Article = ({ article }) => {
       </Head>
 
       <section className="mb-12">
-        <div className="relative w-full h-[200px] sm:h-[400px] mb-10">
-          <Image
-            src={article.cover_image}
-            layout="fill"
-            objectFit="cover"
-            alt={article.title}
-          />
-        </div>
+        {article.cover_image && (
+          <div className="relative w-full h-[200px] sm:h-[400px] mb-10">
+            <Image
+              src={article.cover_image}
+              layout="fill"
+              objectFit="cover"
+              alt={article.title}
+            />
+          </div>
+        )}
         <h1 className="m-auto text-5xl sm:text-6xl text-gray-900 dark:text-gray-50 font-headline font-bold">
           {article.title}
         </h1>

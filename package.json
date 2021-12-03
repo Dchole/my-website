@@ -1,5 +1,5 @@
 {
-  "name": "nextjs",
+  "name": "oware",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,31 +8,32 @@
     "start": "next start"
   },
   "dependencies": {
-    "@fontsource/fira-code": "^4.5.0",
-    "@fontsource/nunito-sans": "^4.5.0",
-    "@fontsource/roboto": "^4.5.0",
+    "@fontsource/fira-code": "^4.5.2",
+    "@fontsource/nunito-sans": "^4.5.1",
+    "@fontsource/roboto": "^4.5.1",
     "@mdx-js/loader": "^1.6.22",
-    "@next/mdx": "^11.0.1",
-    "autoprefixer": "^10.3.1",
+    "@next/mdx": "^12.0.4",
+    "autoprefixer": "^10.4.0",
     "base-64": "^1.0.0",
-    "focus-trap-react": "^8.7.0",
-    "next": "11.0.1",
-    "next-seo": "^4.26.0",
+    "focus-trap-react": "^8.8.2",
+    "next": "^12.0.4",
+    "next-seo": "^4.28.1",
     "nprogress": "^0.2.0",
-    "postcss": "^8.3.6",
+    "postcss": "^8.4.4",
     "prism-react-renderer": "^1.2.1",
     "prop-types": "^15.7.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-markdown": "^6.0.3",
-    "react-syntax-highlighter": "^15.4.4",
-    "remark-gfm": "^1.0.0",
-    "tailwindcss": "^2.2.7"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-markdown": "^7.1.1",
+    "react-syntax-highlighter": "^15.4.5",
+    "remark-gfm": "^3.0.1",
+    "sharp": "^0.29.3",
+    "tailwindcss": "^2.2.19"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-next": "^11.0.1",
-    "next-transpile-modules": "^8.0.0",
-    "preact": "^10.5.14"
+    "eslint": "<8.0.0",
+    "eslint-config-next": "^12.0.4",
+    "next-transpile-modules": "^9.0.0",
+    "preact": "^10.6.2"
   }
 }

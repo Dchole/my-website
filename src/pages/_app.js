@@ -9,10 +9,6 @@ import "@fontsource/roboto/500.css"
 import "@fontsource/roboto/400-italic.css"
 import "tailwindcss/tailwind.css"
 
-export function reportWebVitals(metric) {
-  console.log(metric)
-}
-
 class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
