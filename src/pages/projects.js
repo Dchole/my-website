@@ -32,7 +32,7 @@ export const getStaticProps = async () => {
   const postsDirectory = path.join(process.cwd(), "src/data")
   const projects = await fs.readFile(
     path.join(postsDirectory, "projects.json"),
-    "utf8"
+    "utf-8"
   )
 
   return { props: { projects: JSON.parse(projects) } }
