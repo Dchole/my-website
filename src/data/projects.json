@@ -1,5 +1,59 @@
 [
   {
+    "title": "Spotify Mobile Web",
+    "cover": "/spotify/song-dark.png",
+    "description": "A mobile version of the Shopify web app. Built a graphQL API to handle the spotify's restful API. Bootstrapped the frontend with vite.js and integrated Spotify Playback SDK for playback capabilities.",
+    "source": "https://github.com/Dchole/spotify",
+    "demo": "https://spotify-pied-one.vercel.app/",
+    "stack": [
+      {
+        "name": "React",
+        "url": "https://reactjs.org/",
+        "icon": "/react.svg"
+      },
+      {
+        "name": "Vite",
+        "url": "https://vitejs.dev/",
+        "icon": "/vitejs.svg"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://material-ui.com",
+        "icon": "/material-ui.svg"
+      },
+      {
+        "name": "Apollo GraphQL",
+        "url": "https://www.apollographql.com/",
+        "icon": "/graphql.svg"
+      }
+    ]
+  },
+  {
+    "title": "Cora Money",
+    "cover": "/cora-hero.png",
+    "description": "Brought to live a stunning figma design with Next.js and MUIv5. I built the landing page for cora, based on the design given me. I added animations to make the page more lively and also made it accessible and rich in seo.\nIt's also responsive to all screen sizes and platforms. This project was the first time I faced the test of browser compatibility and platform specific issues. Our target browsers included opera mini and old safari versions, and they were all handled with care.",
+    "source": "",
+    "demo": "https://www.cora.money/",
+    "stack": [
+      {
+        "name": "React",
+        "url": "https://reactjs.org",
+        "icon": "/react.svg"
+      },
+      {
+        "name": "Next",
+        "url": "https://nextjs.org",
+        "icon": "/nextjs-black-logo.svg",
+        "dark_mode_icon": "/nextjs-white-logo.svg"
+      },
+      {
+        "name": "Material UI",
+        "url": "https://material-ui.com",
+        "icon": "/material-ui.svg"
+      }
+    ]
+  },
+  {
     "title": "CatWiki",
     "cover": "/catwiki.png",
     "description": "A website about varieties of breeds of cats. I built this project as part of the challenges on devchallenges.io. The goal was to all breeds of cats from an API, customize the API on a custom server and then serve to the client.",
@@ -7,7 +61,7 @@
     "demo": "https://cat-wiki-challenge.vercel.app",
     "stack": [
       {
-        "name": "NextJS",
+        "name": "Next",
         "url": "https://nextjs.org",
         "icon": "/nextjs-black-logo.svg",
         "dark_mode_icon": "/nextjs-white-logo.svg"
@@ -25,69 +79,6 @@
       {
         "name": "MongoDB",
         "url": "https://www.mongodb.com/",
-        "icon": "/mongodb.svg"
-      },
-      {
-        "name": "NodeJS",
-        "url": "https://nodejs.org/",
-        "icon": "/nodejs.svg"
-      }
-    ]
-  },
-  {
-    "title": "Form Application",
-    "cover": "/list-makerr.png",
-    "description": "This is a minimalist form application I created to automate data collection at my school. The process of collecting data from students was tedious and annoying so I created a simple form application to get information from students and parse it into spreadsheet data",
-    "source": "https://github.com/Dchole/list-maker",
-    "demo": "https://list-makerr.herokuapp.com/",
-    "stack": [
-      {
-        "name": "NextJS",
-        "url": "https://reactjs.org",
-        "icon": "/react.svg"
-      },
-      {
-        "name": "Material UI",
-        "url": "https://material-ui.com",
-        "icon": "/material-ui.svg"
-      },
-      {
-        "name": "MongoDB",
-        "url": "https://www.mongodb.com/",
-        "icon": "/mongodb.svg"
-      },
-      {
-        "name": "NodeJS",
-        "url": "https://nodejs.org/",
-        "icon": "/nodejs.svg"
-      }
-    ]
-  },
-  {
-    "title": "SpaceX Launches",
-    "cover": "/space-explorer.png",
-    "description": "This is a full Progressive Web App built with React and apollo-client. it works offline-first and uses background-sync to complete failed user actions and notify users when sync is successful. The dynamic data is also stored in indexedDB so the app has 100% usability",
-    "source": "https://github.com/Dchole/ApolloGraphQL",
-    "demo": "https://space-explorer-tan.vercel.app/",
-    "stack": [
-      {
-        "name": "React",
-        "url": "https://reactjs.org",
-        "icon": "/react.svg"
-      },
-      {
-        "name": "Material UI",
-        "url": "https://material-ui.com",
-        "icon": "/material-ui.svg"
-      },
-      {
-        "name": "GraphQL",
-        "url": "https://graphql.com/",
-        "icon": "/graphql.svg"
-      },
-      {
-        "name": "MongoDB",
-        "url": "https://mongodb.com/",
         "icon": "/mongodb.svg"
       },
       {

@@ -12,23 +12,32 @@ const ProjectTile = ({ project, reversed }) => {
 
   return (
     <section
-      className={`flex flex-col sm:flex-row gap-12 items-center ${
+      className={`flex flex-col sm:flex-row gap-16 items-center ${
         reversed ? "sm:flex-row-reverse" : ""
       }`}
     >
-      <Image
-        src={cover}
-        alt={title}
-        width={1150}
-        height={875}
-        objectFit="contain"
-      />
-      <div className="space-y-6">
-        <h2 className="text-5xl text-gray-900 dark:text-gray-100 font-headline font-bold">
+      <div className="w-[100%] h-[250px] sm:w-[50%] sm:h-[300px] relative">
+        <Image
+          src={cover}
+          alt={title}
+          layout="fill"
+          objectFit="contain"
+          placeholder="blur"
+          blurDataURL={cover}
+        />
+      </div>
+      <div
+        className={`space-y-6 sm:max-w-[50%] flex flex-col items-start ${
+          reversed ? "sm:items-start" : "sm:items-end"
+        }`}
+      >
+        <h2 className="text-5xl text-gray-900 leading-normal dark:text-gray-100 font-headline font-bold">
           {title}
         </h2>
-        <p className="text-gray-600 dark:text-gray-400 font-body tracking-body">
-          {description}
+        <p className="text-gray-600 dark:text-gray-400 font-body tracking-body space-y-4">
+          {description.split("\n").map(paragraph => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
         </p>
         <ul className="flex items-center justify-center gap-12">
           {stack.map(({ name, url, icon, ...rest }) => (
@@ -44,26 +53,28 @@ const ProjectTile = ({ project, reversed }) => {
                       : icon // If not, use the default icon
                   }
                   alt={name}
-                  width={name === "NextJS" ? 50 : 40}
-                  height={name === "NextJS" ? 50 : 40}
+                  width={name === "Next" ? 50 : 40}
+                  height={name === "Next" ? 50 : 40}
                 />
               </a>
             </li>
           ))}
         </ul>
         <div className="flex justify-end gap-8">
-          <a
-            href={source}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-purple-700 dark:text-purple-300 text-md font-body tracking-body flex justify-between items-center gap-1"
-            aria-label={`view ${title}'s source code`}
-          >
-            {xs ? "Source Code" : "View Source Code"}{" "}
-            <span className="transform scale-60">
-              <Github />
-            </span>
-          </a>
+          {source && (
+            <a
+              href={source}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-purple-700 dark:text-purple-300 text-md font-body tracking-body flex justify-between items-center gap-1"
+              aria-label={`view ${title}'s source code`}
+            >
+              {xs ? "Source Code" : "View Source Code"}{" "}
+              <span className="transform scale-60">
+                <Github />
+              </span>
+            </a>
+          )}
           <a
             href={demo}
             target="_blank"
